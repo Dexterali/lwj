@@ -1,0 +1,10 @@
+[book]
+authors = ["LiWenJu"]
+language = "zh"
+multilingual = false
+src = "src"
+title = "读书笔记"
+description = "李文举的个人技术网页"
+
+[output.html]
+mathjax-support = true
