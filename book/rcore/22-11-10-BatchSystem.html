@@ -1,0 +1,628 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>BatchSystem - 读书笔记</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="李文举的个人技术网页">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">关于</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Rust学习笔记</li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">1.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../rust/tutorial.html"><strong aria-hidden="true">2.</strong> Rust学习资源整合</a></li><li class="chapter-item expanded "><a href="../rust/mut.html"><strong aria-hidden="true">3.</strong> mut 和 &mut</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">数据结构与算法</li><li class="chapter-item expanded "><a href="../algorithm/sort.html"><strong aria-hidden="true">4.</strong> 排序</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Acwing</li><li class="chapter-item expanded "><a href="../acwing/基础算法/intro.html"><strong aria-hidden="true">5.</strong> 基础算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../acwing/基础算法/快速排序.html"><strong aria-hidden="true">5.1.</strong> 快速排序</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/第k小的数.html"><strong aria-hidden="true">5.2.</strong> 第k小的数</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/归并排序.html"><strong aria-hidden="true">5.3.</strong> 归并排序</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/逆序对的数量.html"><strong aria-hidden="true">5.4.</strong> 逆序对的数量</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/高精度加法.html"><strong aria-hidden="true">5.5.</strong> 高精度加法</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/高精度减法.html"><strong aria-hidden="true">5.6.</strong> 高精度减法</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/高精度乘法.html"><strong aria-hidden="true">5.7.</strong> 高精度乘法</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/高精度除法.html"><strong aria-hidden="true">5.8.</strong> 高精度除法</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/前缀和.html"><strong aria-hidden="true">5.9.</strong> 前缀和</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/子矩阵的和.html"><strong aria-hidden="true">5.10.</strong> 子矩阵的和</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/差分.html"><strong aria-hidden="true">5.11.</strong> 差分</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/差分矩阵.html"><strong aria-hidden="true">5.12.</strong> 差分矩阵</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/最长连续不重复子序列.html"><strong aria-hidden="true">5.13.</strong> 最长连续不重复子序列</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/区间和.html"><strong aria-hidden="true">5.14.</strong> 区间和</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/区间合并.html"><strong aria-hidden="true">5.15.</strong> 区间合并</a></li></ol></li><li class="chapter-item expanded "><a href="../acwing/数据结构/intro.html"><strong aria-hidden="true">6.</strong> 数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../acwing/数据结构/单链表.html"><strong aria-hidden="true">6.1.</strong> 单链表</a></li><li class="chapter-item expanded "><a href="../acwing/数据结构/双链表.html"><strong aria-hidden="true">6.2.</strong> 双链表</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Emacs学习笔记</li><li class="chapter-item expanded "><a href="../emacs/index.html"><strong aria-hidden="true">7.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../emacs/tutorial.html"><strong aria-hidden="true">8.</strong> 入门教程</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Node相关</li><li class="chapter-item expanded "><a href="../node/index.html"><strong aria-hidden="true">9.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../node/setting.html"><strong aria-hidden="true">10.</strong> yarn与npm设置软件源</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded "><a href="../react/index.html"><strong aria-hidden="true">11.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../react/react_01.html"><strong aria-hidden="true">12.</strong> 创建虚拟DOM的两种方式</a></li><li class="chapter-item expanded "><a href="../react/react_02.html"><strong aria-hidden="true">13.</strong> jsx语法规则</a></li><li class="chapter-item expanded "><a href="../react/react_03.html"><strong aria-hidden="true">14.</strong> React组件</a></li><li class="chapter-item expanded "><a href="../react/react_04.html"><strong aria-hidden="true">15.</strong> class组件的三大的属性</a></li><li class="chapter-item expanded "><a href="../react/react_05.html"><strong aria-hidden="true">16.</strong> React事件处理</a></li><li class="chapter-item expanded "><a href="../react/react_06.html"><strong aria-hidden="true">17.</strong> React中收集表单数据</a></li><li class="chapter-item expanded "><a href="../react/react_07.html"><strong aria-hidden="true">18.</strong> js高阶函数与函数柯里化</a></li><li class="chapter-item expanded "><a href="../react/react_08.html"><strong aria-hidden="true">19.</strong> 组件的生命周期</a></li><li class="chapter-item expanded "><a href="../react/react_09.html"><strong aria-hidden="true">20.</strong> Diffing算法与key</a></li><li class="chapter-item expanded "><a href="../react/react_10.html"><strong aria-hidden="true">21.</strong> react脚手架配置代理</a></li><li class="chapter-item expanded "><a href="../react/react_11.html"><strong aria-hidden="true">22.</strong> axios与fetch</a></li><li class="chapter-item expanded "><a href="../react/react_12.html"><strong aria-hidden="true">23.</strong> 组件间的通信方式</a></li><li class="chapter-item expanded "><a href="../react/react_13.html"><strong aria-hidden="true">24.</strong> Diffing算法与key</a></li><li class="chapter-item expanded "><a href="../react/react_14.html"><strong aria-hidden="true">25.</strong> Diffing算法与key</a></li><li class="chapter-item expanded "><a href="../react/react_15.html"><strong aria-hidden="true">26.</strong> Diffing算法与key</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">rCore 学习笔记</li><li class="chapter-item expanded "><a href="../rcore/22-11-09-LibOS.html"><strong aria-hidden="true">27.</strong> LibOS</a></li><li class="chapter-item expanded "><a href="../rcore/22-11-10-BatchSystem.html" class="active"><strong aria-hidden="true">28.</strong> BatchSystem</a></li><li class="chapter-item expanded "><a href="../rcore/22-11-11-MultitaskingOS.html"><strong aria-hidden="true">29.</strong> MultitaskingOS</a></li><li class="chapter-item expanded "><a href="../rcore/22-11-14-Address.html"><strong aria-hidden="true">30.</strong> Address</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">读书笔记</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="批处理系统--batch-system"><a class="header" href="#批处理系统--batch-system">批处理系统--Batch System</a></h1>
+<img title="" src="http://rcore-os.cn/rCore-Tutorial-Book-v3/_images/deng-fish.png" alt="" data-align="center">
+<h2 id="1特权级机制"><a class="header" href="#1特权级机制">1.特权级机制</a></h2>
+<p>什么时候会发生用户态到内核态的切换？</p>
+<blockquote>
+<p>处理器检测到用户态执行环境中执行了内核态特权级指令</p>
+</blockquote>
+<p>软硬件协同设计</p>
+<blockquote>
+<ol>
+<li>
+<p>执行环境调用指令<code>ecall</code>：具有用户态到内核态的执行环境切换能力的函数调用指令</p>
+</li>
+<li>
+<p>执行环境返回指令<code>eret</code>：具有内核态到用户态的执行环境切换能力的函数返回指令</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="2risc-v特权级架构"><a class="header" href="#2risc-v特权级架构">2.Risc-V特权级架构</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">级别</th><th style="text-align: center">编码</th><th style="text-align: center">名称</th></tr></thead><tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">00</td><td style="text-align: center">用户/应用模式 (U, User/Application)</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">01</td><td style="text-align: center">监督模式 (S, Supervisor)</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">10</td><td style="text-align: center">虚拟监督模式 (H, Hypervisor)</td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center">11</td><td style="text-align: center">机器模式 (M, Machine)</td></tr>
+</tbody></table>
+</div>
+<h2 id="3执行环境栈与特权级"><a class="header" href="#3执行环境栈与特权级">3.执行环境栈与特权级</a></h2>
+<img title="" src="http://rcore-os.cn/rCore-Tutorial-Book-v3/_images/PrivilegeStack.png" alt="" data-align="center">
+<h2 id="4risc-v定义的异常"><a class="header" href="#4risc-v定义的异常">4.Risc-V定义的异常</a></h2>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Interrupt</th><th style="text-align: center">Exception Code</th><th style="text-align: center">Description</th></tr></thead><tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">Instruction address misaligned</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">Instruction access fault</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">2</td><td style="text-align: center">Illegal instruction</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">3</td><td style="text-align: center">Breakpoint</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">4</td><td style="text-align: center">Load address misaligned</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">5</td><td style="text-align: center">Load access fault</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">6</td><td style="text-align: center">Store/AMO address misaligned</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">7</td><td style="text-align: center">Store/AMO access fault</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">8</td><td style="text-align: center">Environment call from U-mode</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">9</td><td style="text-align: center">Environment call from S-mode</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">11</td><td style="text-align: center">Environment call from M-mode</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">12</td><td style="text-align: center">Instruction page fault</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">13</td><td style="text-align: center">Load page fault</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">15</td><td style="text-align: center">Store/AMO page fault</td></tr>
+</tbody></table>
+</div>
+<h2 id="5特权级切换"><a class="header" href="#5特权级切换">5.特权级切换</a></h2>
+<img title="" src="http://rcore-os.cn/rCore-Tutorial-Book-v3/_images/EnvironmentCallFlow.png" alt="" data-align="center">
+<h2 id="6risc-v-s-模式特权指令"><a class="header" href="#6risc-v-s-模式特权指令">6.Risc-V S 模式特权指令</a></h2>
+<p>RISC-V S模式特权指令</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">指令</th><th style="text-align: center">含义</th></tr></thead><tbody>
+<tr><td style="text-align: center">sret</td><td style="text-align: center">从 S 模式返回 U 模式：在 U 模式下执行会产生非法指令异常</td></tr>
+<tr><td style="text-align: center">wfi</td><td style="text-align: center">处理器在空闲时进入低功耗状态等待中断：在 U 模式下执行会产生非法指令异常</td></tr>
+<tr><td style="text-align: center">sfence.vma</td><td style="text-align: center">刷新 TLB 缓存：在 U 模式下执行会产生非法指令异常</td></tr>
+<tr><td style="text-align: center">访问 S 模式 CSR 的指令</td><td style="text-align: center">通过访问 <a href="http://rcore-os.cn/rCore-Tutorial-Book-v3/chapter2/4trap-handling.html#term-s-mod-csr">sepc/stvec/scause/sscartch/stval/sstatus/satp等CSR</a> 来改变系统状态：在 U 模式下执行会产生非法指令异常</td></tr>
+</tbody></table>
+</div>
+<h2 id="7risc-v-寄存器编号和别名以及作用"><a class="header" href="#7risc-v-寄存器编号和别名以及作用">7.Risc-V 寄存器编号和别名以及作用</a></h2>
+<p><code>risc-v</code>寄存器编号从<code>0~31</code>，表示为<code>x0~x31</code>。其中</p>
+<ul>
+<li>
+<p><code>x10~x17</code>对应<code>a0~a7</code></p>
+</li>
+<li>
+<p><code>x1</code>对应<code>ra</code></p>
+</li>
+</ul>
+<p><code>risc-v</code>调用规范约定<code>a0~a6</code>保存系统调用的参数，<code>a0</code>保存系统调用的返回值，而<code>a7</code>用来传递<code>syscall ID</code></p>
+<h2 id="8link_apps应用程序链接脚本"><a class="header" href="#8link_apps应用程序链接脚本">8.<code>link_app.S</code>应用程序链接脚本</a></h2>
+<pre><code class="language-nasm"># os/src/link_app.S
+    .align 3
+    .section .data
+    .global _num_app
+
+_num_app:
+    .quad 5
+    .quad app_0_start
+    .quad app_1_start
+    .quad app_2_start
+    .quad app_3_start
+    .quad app_4_start
+    .quad app_4_end
+
+    .section .data
+    .global app_0_start
+    .global app_0_end
+
+app_0_start:
+    .incbin &quot;../user/target/riscv64gc-unknown-none-elf/release/00hello_world.bin&quot;
+app_0_end:
+
+    .section .data
+    .global app_1_start
+    .global app_1_end
+
+app_1_start:
+    .incbin &quot;../user/target/riscv64gc-unknown-none-elf/release/01store_fault.bin&quot;
+app_1_end:
+
+    .section .data
+    .global app_2_start
+    .global app_2_end
+
+app_2_start:
+    .incbin &quot;../user/target/riscv64gc-unknown-none-elf/release/02power.bin&quot;
+app_2_end:
+
+    .section .data
+    .global app_3_start
+    .global app_3_end
+
+app_3_start:
+    .incbin &quot;../user/target/riscv64gc-unknown-none-elf/release/03priv_inst.bin&quot;
+app_3_end:
+
+    .section .data
+    .global app_4_start
+    .global app_4_end
+
+app_4_start:
+    .incbin &quot;../user/target/riscv64gc-unknown-none-elf/release/04priv_csr.bin&quot;
+app_4_end:
+</code></pre>
+<h2 id="9-批处理操作系统提供的aee应用程序执行环境需要做到"><a class="header" href="#9-批处理操作系统提供的aee应用程序执行环境需要做到">9. 批处理操作系统提供的<code>AEE</code>（应用程序执行环境），需要做到：</a></h2>
+<blockquote>
+<ul>
+<li>
+<p>当启动应用程序的时候，需要初始化应用程序的用户态上下文，并能切换到用户态执行应用程序；</p>
+</li>
+<li>
+<p>当应用程序发起系统调用（即发出 <code>Trap</code>）之后，需要到批处理操作系统中进行处理；</p>
+</li>
+<li>
+<p>当应用程序执行出错的时候，需要到批处理操作系统中杀死该应用并加载运行下一个应用；</p>
+</li>
+<li>
+<p>当应用程序执行结束的时候，需要到批处理操作系统中加载运行下一个应用（实际上也是通过系统调用 <code>sys_exit</code> 来实现的）。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="10特权级切换相关的控制状态寄存器csr"><a class="header" href="#10特权级切换相关的控制状态寄存器csr">10.特权级切换相关的控制状态寄存器<code>CSR</code></a></h2>
+<ul>
+<li>进入 S 特权级 <code>Trap</code> 的相关 <code>CSR</code></li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">CSR 名</th><th style="text-align: center">该 CSR 与 Trap 相关的功能</th></tr></thead><tbody>
+<tr><td style="text-align: center">sstatus</td><td style="text-align: center"><code>SPP</code> 等字段给出 Trap 发生之前 CPU 处在哪个特权级（S/U）等信息</td></tr>
+<tr><td style="text-align: center">sepc</td><td style="text-align: center">当 Trap 是一个异常的时候，记录 Trap 发生之前执行的最后一条指令的地址</td></tr>
+<tr><td style="text-align: center">scause</td><td style="text-align: center">描述 Trap 的原因</td></tr>
+<tr><td style="text-align: center">stval</td><td style="text-align: center">给出 Trap 附加信息</td></tr>
+<tr><td style="text-align: center">stvec</td><td style="text-align: center">控制 Trap 处理代码的入口地址</td></tr>
+</tbody></table>
+</div>
+<h2 id="11特权级切换的硬件控制机制"><a class="header" href="#11特权级切换的硬件控制机制">11.特权级切换的硬件控制机制</a></h2>
+<p>当 CPU 执行完一条指令（如 <code>ecall</code> ）并准备从用户特权级 陷入（ <code>Trap</code> ）到 S 特权级的时候，硬件会自动完成如下这些事情：</p>
+<blockquote>
+<ul>
+<li>
+<p><code>sstatus</code> 的 <code>SPP</code> 字段会被修改为 CPU 当前的特权级（U/S）。</p>
+</li>
+<li>
+<p><code>sepc</code> 会被修改为 Trap 处理完成后默认会执行的下一条指令的地址。</p>
+</li>
+<li>
+<p><code>scause/stval</code> 分别会被修改成这次 Trap 的原因以及相关的附加信息。</p>
+</li>
+<li>
+<p>CPU 会跳转到 <code>stvec</code> 所设置的 Trap 处理入口地址，并将当前特权级设置为 S ，然后从Trap 处理入口地址处开始执行。</p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>注解：<strong>stvec 相关细节</strong></p>
+<p>在 RV64 中， <code>stvec</code> 是一个 64 位的 CSR，在中断使能的情况下，保存了中断处理的入口地址。它有两个字段：</p>
+<ul>
+<li>
+<p>MODE 位于 [1:0]，长度为 2 bits；</p>
+</li>
+<li>
+<p>BASE 位于 [63:2]，长度为 62 bits。</p>
+</li>
+</ul>
+<p>当 MODE 字段为 0 的时候， <code>stvec</code> 被设置为 Direct 模式，此时进入 S 模式的 Trap 无论原因如何，处理 Trap 的入口地址都是 <code>BASE&lt;&lt;2</code> ， CPU 会跳转到这个地方进行异常处理。本书中我们只会将 <code>stvec</code> 设置为 Direct 模式。而 <code>stvec</code> 还可以被设置为 Vectored 模式，有兴趣的同学可以自行参考 RISC-V 指令集特权级规范。</p>
+</blockquote>
+<p>而当 CPU 完成 Trap 处理准备返回的时候，需要通过一条 S 特权级的特权指令 <code>sret</code> 来完成，这一条指令具体完成以下功能：</p>
+<ul>
+<li>
+<p>CPU 会将当前的特权级按照 <code>sstatus</code> 的 <code>SPP</code> 字段设置为 U 或者 S ；</p>
+</li>
+<li>
+<p>CPU 会跳转到 <code>sepc</code> 寄存器指向的那条指令，然后继续执行。</p>
+</li>
+</ul>
+<h2 id="12trap-管理"><a class="header" href="#12trap-管理">12.Trap 管理</a></h2>
+<ul>
+<li>
+<p>应用程序通过 <code>ecall</code> 进入到内核状态时，操作系统保存被打断的应用程序的 Trap 上下文；</p>
+</li>
+<li>
+<p>操作系统根据Trap相关的CSR寄存器内容，完成系统调用服务的分发与处理；</p>
+</li>
+<li>
+<p>操作系统完成系统调用服务后，需要恢复被打断的应用程序的Trap 上下文，并通 <code>sret</code> 让应用程序继续执行。</p>
+</li>
+</ul>
+<p>Trap 上下文的保存和恢复</p>
+<p><code>trap.S</code>：</p>
+<pre><code class="language-nasm">.altmacro
+.macro SAVE_GP n
+    sd x\n, \n*8(sp)
+.endm
+.macro LOAD_GP n
+    ld x\n, \n*8(sp)
+.endm
+    .section .text
+    .globl __alltraps
+    .globl __restore
+    .align 2 # 将 _alltraps 的地址 4 字节对齐
+__alltraps: # trap 处理程序的入口点
+    csrrw sp, sscratch, sp
+    # now sp-&gt;kernel stack, sscratch-&gt;user stack
+    # allocate a TrapContext on kernel stack
+    addi sp, sp, -34*8
+    # save general-purpose registers
+    sd x1, 1*8(sp)
+    # skip sp(x2), we will save it later
+    sd x3, 3*8(sp)
+    # skip tp(x4), application does not use it
+    # save x5~x31
+    .set n, 5
+    .rept 27
+        SAVE_GP %n
+        .set n, n+1
+    .endr
+    # we can use t0/t1/t2 freely, because they were saved on kernel stack
+    csrr t0, sstatus
+    csrr t1, sepc
+    sd t0, 32*8(sp)
+    sd t1, 33*8(sp)
+    # read user stack from sscratch and save it on the kernel stack
+    csrr t2, sscratch
+    sd t2, 2*8(sp)
+    # set input argument of trap_handler(cx: &amp;mut TrapContext)
+    mv a0, sp
+    call trap_handler   # rust 实现 trap 的分发和处理 
+
+__restore:  # 恢复 trap 之前的寄存器状态
+    # case1: start running app by __restore
+    # case2: back to U after handling trap
+    mv sp, a0
+    # now sp-&gt;kernel stack(after allocated), sscratch-&gt;user stack
+    # restore sstatus/sepc
+    ld t0, 32*8(sp)
+    ld t1, 33*8(sp)
+    ld t2, 2*8(sp)
+    csrw sstatus, t0
+    csrw sepc, t1
+    csrw sscratch, t2
+    # restore general-purpuse registers except sp/tp
+    ld x1, 1*8(sp)
+    ld x3, 3*8(sp)
+    .set n, 5
+    .rept 27
+        LOAD_GP %n
+        .set n, n+1
+    .endr
+    # release TrapContext on kernel stack
+    addi sp, sp, 34*8
+    # now sp-&gt;kernel stack, sscratch-&gt;user stack
+    csrrw sp, sscratch, sp
+    sret
+</code></pre>
+<blockquote>
+<ul>
+<li>
+<p>第 7 行我们使用 <code>.align</code> 将 <code>__alltraps</code> 的地址 4 字节对齐，这是 RISC-V 特权级规范的要求；</p>
+</li>
+<li>
+<p><code>csrrw</code> 原型是 <code>csrrw rd, csr, rs</code> 可以将 CSR 当前的值读到通用寄存器 <code>rd</code> 中，然后将通用寄存器 <code>rs</code> 的值写入该 CSR 。因此这里起到的是交换 sscratch 和 sp 的效果。在这一行之前 sp 指向用户栈， sscratch 指向内核栈（原因稍后说明），现在 sp 指向内核栈， sscratch 指向用户栈。</p>
+</li>
+<li>
+<p>第 12 行，我们准备在内核栈上保存 Trap 上下文，于是预先分配 <code>34 * 8 </code>字节的栈帧，这里改动的是 sp ，说明确实是在内核栈上。</p>
+</li>
+<li>
+<p>第 13~24 行，保存 Trap 上下文的通用寄存器 x0~x31，跳过 x0 和 tp(x4)，原因之前已经说明。我们在这里也不保存 sp(x2)，因为我们要基于它来找到每个寄存器应该被保存到的正确的位置。实际上，在栈帧分配之后，我们可用于保存 Trap 上下文的地址区间为 <code>[sp, sp + 8 * 34]</code>，按照 <code>TrapContext</code> 结构体的内存布局，基于内核栈的位置（sp所指地址）来从低地址到高地址分别按顺序放置 x0~x31这些通用寄存器，最后是 sstatus 和 sepc 。因此通用寄存器 xn 应该被保存在地址区间 <code>[sp + 8n, sp + 8(n + 1)]</code> 。为了简化代码，x5~x31 这 27 个通用寄存器我们通过类似循环的 <code>.rept</code> 每次使用 <code>SAVE_GP</code> 宏来保存，其实质是相同的。注意我们需要在 <code>trap.S</code> 开头加上 <code>.altmacro</code> 才能正常使用 <code>.rept</code> 命令。</p>
+</li>
+<li>
+<p>第 25~28 行，我们将 CSR sstatus 和 sepc 的值分别读到寄存器 t0 和 t1 中然后保存到内核栈对应的位置上。指令 <code>csrr rs, csr</code> 的功能就是将 CSR 的值读到寄存器 <code>rd</code> 中。这里我们不用担心 t0 和 t1 被覆盖，因为它们刚刚已经被保存了。</p>
+</li>
+<li>
+<p>第 30~31 行专门处理 sp 的问题。首先将 sscratch 的值读到寄存器 t2 并保存到内核栈上，注意： sscratch 的值是进入 Trap 之前的 sp 的值，指向用户栈。而现在的 sp 则指向内核栈。</p>
+</li>
+<li>
+<p>第 33 行令 <code>a0 &lt;- sp</code>，让寄存器 a0 指向内核栈的栈指针也就是我们刚刚保存的 Trap 上下文的地址，这是由于我们接下来要调用 <code>trap_handler</code> 进行 Trap 处理，它的第一个参数 <code>cx</code> 由调用规范要从 a0 中获取。而 Trap 处理函数 <code>trap_handler</code> 需要 Trap 上下文的原因在于：它需要知道其中某些寄存器的值，比如在系统调用的时候应用程序传过来的 syscall ID 和对应参数。我们不能直接使用这些寄存器现在的值，因为它们可能已经被修改了，因此要去内核栈上找已经被保存下来的值</p>
+</li>
+</ul>
+</blockquote>
+<pre><code class="language-nasm">__restore:  # 恢复 trap 之前的寄存器状态
+    # case1: start running app by __restore
+    # case2: back to U after handling trap
+    mv sp, a0
+    # now sp-&gt;kernel stack(after allocated), sscratch-&gt;user stack
+    # restore sstatus/sepc
+    ld t0, 32*8(sp)
+    ld t1, 33*8(sp)
+    ld t2, 2*8(sp)
+    csrw sstatus, t0
+    csrw sepc, t1
+    csrw sscratch, t2
+    # restore general-purpuse registers except sp/tp
+    ld x1, 1*8(sp)
+    ld x3, 3*8(sp)
+    .set n, 5
+    .rept 27
+        LOAD_GP %n
+        .set n, n+1
+    .endr
+    # release TrapContext on kernel stack
+    addi sp, sp, 34*8
+    # now sp-&gt;kernel stack, sscratch-&gt;user stack
+    csrrw sp, sscratch, sp
+    sret
+</code></pre>
+<blockquote>
+<ul>
+<li>
+<p>第 4 行比较奇怪我们暂且不管，假设它从未发生，那么 sp 仍然指向内核栈的栈顶。</p>
+</li>
+<li>
+<p>第 7~20 行负责从内核栈顶的 Trap 上下文恢复通用寄存器和 CSR 。注意我们要先恢复 CSR 再恢复通用寄存器，这样我们使用的三个临时寄存器才能被正确恢复。</p>
+</li>
+<li>
+<p>在第 22 行之前，sp 指向保存了 Trap 上下文之后的内核栈栈顶， sscratch 指向用户栈栈顶。我们在第 28 行在内核栈上回收 Trap 上下文所占用的内存，回归进入 Trap 之前的内核栈栈顶。第 30 行，再次交换 sscratch 和 sp，现在 sp 重新指向用户栈栈顶，sscratch 也依然保存进入 Trap 之前的状态并指向内核栈栈顶。</p>
+</li>
+<li>
+<p>在应用程序控制流状态被还原之后，第 31 行我们使用 <code>sret</code> 指令回到 U 特权级继续运行应用程序控制流。</p>
+</li>
+</ul>
+</blockquote>
+<p>注解：<strong>sscratch CSR 的用途</strong></p>
+<blockquote>
+<p>在特权级切换的时候，我们需要将 Trap 上下文保存在内核栈上，因此需要一个寄存器暂存内核栈地址，并以它作为基地址指针来依次保存 Trap 上下文的内容。但是所有的通用寄存器都不能够用作基地址指针，因为它们都需要被保存，如果覆盖掉它们，就会影响后续应用控制流的执行。</p>
+<p>事实上我们缺少了一个重要的中转寄存器，而 <code>sscratch</code> CSR 正是为此而生。从上面的汇编代码中可以看出，在保存 Trap 上下文的时候，它起到了两个作用：首先是保存了内核栈的地址，其次它可作为一个中转站让 <code>sp</code> （目前指向的用户栈的地址）的值可以暂时保存在 <code>sscratch</code> 。这样仅需一条 <code>csrrw  sp, sscratch, sp</code> 指令（交换对 <code>sp</code> 和 <code>sscratch</code> 两个寄存器内容）就完成了从用户栈到内核栈的切换，这是一种极其精巧的实现。</p>
+</blockquote>
+<p>trap 分发和处理</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub fn trap_handler(cx: &amp;mut TrapContext) -&gt; &amp;mut TrapContext {
+    let scause = scause::read(); // get trap cause
+    let stval = stval::read(); // get extra value
+    match scause.cause() {
+        Trap::Exception(Exception::UserEnvCall) =&gt; {
+            cx.sepc += 4;
+            // 从 a0 读取整个 TrapContext
+            // 这里就体现了操作系统和用户程序约定的系统调用规范
+            cx.x[10] = syscall(cx.x[17], [cx.x[10], cx.x[11], cx.x[12]]) as usize;
+        }
+        Trap::Exception(Exception::StoreFault) | Trap::Exception(Exception::StorePageFault) =&gt; {
+            println!(&quot;[kernel] PageFault in application, kernel killed it.&quot;);
+            run_next_app();
+        }
+        Trap::Exception(Exception::IllegalInstruction) =&gt; {
+            println!(&quot;[kernel] IllegalInstruction in application, kernel killed it.&quot;);
+            run_next_app();
+        }
+        _ =&gt; {
+            panic!(
+                &quot;Unsupported trap {:?}, stval = {:#x}!&quot;,
+                scause.cause(),
+                stval
+            );
+        }
+    }
+    cx
+}
+<span class="boring">}
+</span></code></pre></pre>
+<blockquote>
+<ul>
+<li>第 4 行声明返回值为 <code>&amp;mut TrapContext</code> 并在第 25 行实际将传入的Trap 上下文 <code>cx</code> 原样返回，因此在 <code>__restore</code> 的时候 <code>a0</code> 寄存器在调用 <code>trap_handler</code> 前后并没有发生变化，仍然指向分配 Trap 上下文之后的内核栈栈顶，和此时 <code>sp</code> 的值相同，这里的- 并不会有问题；</li>
+</ul>
+<ul>
+<li>
+<p>第 7 行根据 <code>scause</code> 寄存器所保存的 Trap 的原因进行分发处理。这里我们无需手动操作这些 CSR ，而是使用 Rust 的 riscv 库来更加方便的做这些事情。</p>
+</li>
+<li>
+<p>第 8~11 行，发现触发 Trap 的原因是来自 U 特权级的 Environment Call，也就是系统调用。这里我们首先修改保存在内核栈上的 Trap 上下文里面 sepc，让其增加 4。这是因为我们知道这是一个由 <code>ecall</code> 指令触发的系统调用，在进入 Trap 的时候，硬件会将 sepc 设置为这条 <code>ecall</code> 指令所在的地址（因为它是进入 Trap 之前最后一条执行的指令）。而在 Trap 返回之后，我们希望应用程序控制流从 <code>ecall</code> 的下一条指令开始执行。因此我们只需修改 Trap 上下文里面的 sepc，让它增加 <code>ecall</code> 指令的码长，也即 4 字节。这样在 <code>__restore</code> 的时候 sepc 在恢复之后就会指向 <code>ecall</code> 的下一条指令，并在 <code>sret</code> 之后从那里开始执行。</p>
+<p>用来保存系统调用返回值的 a0 寄存器也会同样发生变化。我们从 Trap 上下文取出作为 syscall ID 的 a7 和系统调用的三个参数 a0~a2 传给 <code>syscall</code> 函数并获取返回值。 <code>syscall</code> 函数是在 <code>syscall</code> 子模块中实现的。 这段代码是处理正常系统调用的控制逻辑。</p>
+</li>
+<li>
+<p>第 12~20 行，分别处理应用程序出现访存错误和非法指令错误的情形。此时需要打印错误信息并调用 <code>run_next_app</code> 直接切换并运行下一个应用程序。</p>
+</li>
+<li>
+<p>第 21 行开始，当遇到目前还不支持的 Trap 类型的时候，“邓式鱼” 批处理操作系统整个 panic 报错退出。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="13执行应用程序"><a class="header" href="#13执行应用程序">13.执行应用程序</a></h2>
+<p>当批处理操作系统初始化完成，或者是某个应用程序运行结束或出错的时候，我们要调用 <code>run_next_app</code> 函数切换到下一个应用程序。此时 CPU 运行在 S 特权级，而它希望能够切换到 U 特权级。在 RISC-V 架构中，唯一一种能够使得 CPU 特权级下降的方法就是执行 Trap 返回的特权指令，如 <code>sret</code> 、<code>mret</code> 等。事实上，在从操作系统内核返回到运行应用程序之前，要完成如下这些工作：</p>
+<ul>
+<li>
+<p>构造应用程序开始执行所需的 Trap 上下文；</p>
+</li>
+<li>
+<p>通过 <code>__restore</code> 函数，从刚构造的 Trap 上下文中，恢复应用程序执行的部分寄存器；</p>
+</li>
+<li>
+<p>设置 <code>sepc</code> CSR的内容为应用程序入口点 <code>0x80400000</code>；</p>
+</li>
+<li>
+<p>切换 <code>scratch</code> 和 <code>sp</code> 寄存器，设置 <code>sp</code> 指向应用程序用户栈；</p>
+</li>
+<li>
+<p>执行 <code>sret</code> 从 S 特权级切换到 U 特权级。</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../rcore/22-11-09-LibOS.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../rcore/22-11-11-MultitaskingOS.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../rcore/22-11-09-LibOS.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../rcore/22-11-11-MultitaskingOS.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -1,0 +1,1285 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rust学习资源整合 - 读书笔记</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="李文举的个人技术网页">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">关于</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Rust学习笔记</li><li class="chapter-item expanded "><a href="../rust/index.html"><strong aria-hidden="true">1.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../rust/tutorial.html" class="active"><strong aria-hidden="true">2.</strong> Rust学习资源整合</a></li><li class="chapter-item expanded "><a href="../rust/mut.html"><strong aria-hidden="true">3.</strong> mut 和 &mut</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">数据结构与算法</li><li class="chapter-item expanded "><a href="../algorithm/sort.html"><strong aria-hidden="true">4.</strong> 排序</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Acwing</li><li class="chapter-item expanded "><a href="../acwing/基础算法/intro.html"><strong aria-hidden="true">5.</strong> 基础算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../acwing/基础算法/快速排序.html"><strong aria-hidden="true">5.1.</strong> 快速排序</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/第k小的数.html"><strong aria-hidden="true">5.2.</strong> 第k小的数</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/归并排序.html"><strong aria-hidden="true">5.3.</strong> 归并排序</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/逆序对的数量.html"><strong aria-hidden="true">5.4.</strong> 逆序对的数量</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/高精度加法.html"><strong aria-hidden="true">5.5.</strong> 高精度加法</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/高精度减法.html"><strong aria-hidden="true">5.6.</strong> 高精度减法</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/高精度乘法.html"><strong aria-hidden="true">5.7.</strong> 高精度乘法</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/高精度除法.html"><strong aria-hidden="true">5.8.</strong> 高精度除法</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/前缀和.html"><strong aria-hidden="true">5.9.</strong> 前缀和</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/子矩阵的和.html"><strong aria-hidden="true">5.10.</strong> 子矩阵的和</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/差分.html"><strong aria-hidden="true">5.11.</strong> 差分</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/差分矩阵.html"><strong aria-hidden="true">5.12.</strong> 差分矩阵</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/最长连续不重复子序列.html"><strong aria-hidden="true">5.13.</strong> 最长连续不重复子序列</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/区间和.html"><strong aria-hidden="true">5.14.</strong> 区间和</a></li><li class="chapter-item expanded "><a href="../acwing/基础算法/区间合并.html"><strong aria-hidden="true">5.15.</strong> 区间合并</a></li></ol></li><li class="chapter-item expanded "><a href="../acwing/数据结构/intro.html"><strong aria-hidden="true">6.</strong> 数据结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../acwing/数据结构/单链表.html"><strong aria-hidden="true">6.1.</strong> 单链表</a></li><li class="chapter-item expanded "><a href="../acwing/数据结构/双链表.html"><strong aria-hidden="true">6.2.</strong> 双链表</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Emacs学习笔记</li><li class="chapter-item expanded "><a href="../emacs/index.html"><strong aria-hidden="true">7.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../emacs/tutorial.html"><strong aria-hidden="true">8.</strong> 入门教程</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Node相关</li><li class="chapter-item expanded "><a href="../node/index.html"><strong aria-hidden="true">9.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../node/setting.html"><strong aria-hidden="true">10.</strong> yarn与npm设置软件源</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">React</li><li class="chapter-item expanded "><a href="../react/index.html"><strong aria-hidden="true">11.</strong> 关于</a></li><li class="chapter-item expanded "><a href="../react/react_01.html"><strong aria-hidden="true">12.</strong> 创建虚拟DOM的两种方式</a></li><li class="chapter-item expanded "><a href="../react/react_02.html"><strong aria-hidden="true">13.</strong> jsx语法规则</a></li><li class="chapter-item expanded "><a href="../react/react_03.html"><strong aria-hidden="true">14.</strong> React组件</a></li><li class="chapter-item expanded "><a href="../react/react_04.html"><strong aria-hidden="true">15.</strong> class组件的三大的属性</a></li><li class="chapter-item expanded "><a href="../react/react_05.html"><strong aria-hidden="true">16.</strong> React事件处理</a></li><li class="chapter-item expanded "><a href="../react/react_06.html"><strong aria-hidden="true">17.</strong> React中收集表单数据</a></li><li class="chapter-item expanded "><a href="../react/react_07.html"><strong aria-hidden="true">18.</strong> js高阶函数与函数柯里化</a></li><li class="chapter-item expanded "><a href="../react/react_08.html"><strong aria-hidden="true">19.</strong> 组件的生命周期</a></li><li class="chapter-item expanded "><a href="../react/react_09.html"><strong aria-hidden="true">20.</strong> Diffing算法与key</a></li><li class="chapter-item expanded "><a href="../react/react_10.html"><strong aria-hidden="true">21.</strong> react脚手架配置代理</a></li><li class="chapter-item expanded "><a href="../react/react_11.html"><strong aria-hidden="true">22.</strong> axios与fetch</a></li><li class="chapter-item expanded "><a href="../react/react_12.html"><strong aria-hidden="true">23.</strong> 组件间的通信方式</a></li><li class="chapter-item expanded "><a href="../react/react_13.html"><strong aria-hidden="true">24.</strong> Diffing算法与key</a></li><li class="chapter-item expanded "><a href="../react/react_14.html"><strong aria-hidden="true">25.</strong> Diffing算法与key</a></li><li class="chapter-item expanded "><a href="../react/react_15.html"><strong aria-hidden="true">26.</strong> Diffing算法与key</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">rCore 学习笔记</li><li class="chapter-item expanded "><a href="../rcore/22-11-09-LibOS.html"><strong aria-hidden="true">27.</strong> LibOS</a></li><li class="chapter-item expanded "><a href="../rcore/22-11-10-BatchSystem.html"><strong aria-hidden="true">28.</strong> BatchSystem</a></li><li class="chapter-item expanded "><a href="../rcore/22-11-11-MultitaskingOS.html"><strong aria-hidden="true">29.</strong> MultitaskingOS</a></li><li class="chapter-item expanded "><a href="../rcore/22-11-14-Address.html"><strong aria-hidden="true">30.</strong> Address</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">读书笔记</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div align="center">
+	<p><img src="https://rustacean.net/more-crabby-things/rustdocs.png" /></p>
+  <p><img src="https://img.shields.io/github/last-commit/WumaCoder/rust-boom?label=%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4&style=for-the-badge" /></p>
+</div>
+<h1 id="rust学习资源整合"><a class="header" href="#rust学习资源整合">Rust学习资源整合💥</a></h1>
+<p>Rust Boom 是一个我在学习使用 Rust 的时候，对 Rust 的一些难点的解决方法以及一些 Rust 开源的好玩的库、书籍、文章的整理，希望可以帮助更多的 Rust 初学者来翻过 Rust 这座大山。</p>
+<h2 id="toc"><a class="header" href="#toc">TOC</a></h2>
+<ul>
+<li><a href="#rust%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88">Rust学习资源整合💥</a>
+<ul>
+<li><a href="#toc">TOC</a></li>
+<li><a href="#blasting">Blasting</a></li>
+<li><a href="#book">Book</a>
+<ul>
+<li><a href="#rust-%E8%AF%AD%E8%A8%80%E5%9C%A3%E7%BB%8F%E4%B8%AD%E6%96%87%E7%89%88">Rust 语言圣经中文版</a></li>
+<li><a href="#rust-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%96%87%E7%89%88">Rust 程序设计语言中文版</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E4%BE%8B%E5%AD%90%E5%AD%A6-rust-%E4%B8%AD%E6%96%87%E7%89%88">通过例子学 Rust 中文版</a></li>
+<li><a href="#rustprimer">RustPrimer</a></li>
+<li><a href="#rust-%E7%A7%98%E5%85%B8%E4%B8%AD%E6%96%87%E7%89%88">Rust 秘典中文版</a></li>
+<li><a href="#rust-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C-%E4%B8%AD%E6%96%87%E7%89%88">Rust 参考手册 中文版</a></li>
+<li><a href="#rust-cookbook-%E4%B8%AD%E6%96%87%E7%89%88">Rust Cookbook 中文版</a></li>
+<li><a href="#rusty-book-%E9%94%88%E4%B9%A6-">Rusty Book( 锈书 )</a></li>
+<li><a href="#rust-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97">Rust 异步编程指南</a></li>
+<li><a href="#rust-%E8%AF%AD%E8%A8%80%E5%AE%9E%E6%88%98">Rust 语言实战</a></li>
+<li><a href="#rust-%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3">Rust 算法题解</a></li>
+<li><a href="#rust-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E6%96%87%E7%89%88">Rust 设计模式 中文版</a></li>
+<li><a href="#rust-api-%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97-%E4%B8%AD%E6%96%87%E7%89%88">Rust API 编写指南 中文版</a></li>
+<li><a href="#rust-%E5%AE%8F%E5%B0%8F%E5%86%8Ctlborm">Rust 宏小册(tlborm)</a></li>
+<li><a href="#%E5%B5%8C%E5%85%A5%E5%BC%8F-rust-%E7%BC%96%E7%A8%8B">嵌入式 Rust 编程</a></li>
+<li><a href="#rust-rfc-book-%E6%8F%90%E6%A1%88%E4%B9%A6">Rust RFC Book (提案书)</a></li>
+<li><a href="#rust-unstable-book-%E4%B8%8D%E7%A8%B3%E5%AE%9A%E7%89%B9%E6%80%A7%E4%B9%A6">Rust Unstable Book (不稳定特性书)</a></li>
+<li><a href="#rust-%E7%89%88%E6%9C%AC%E6%8C%87%E5%8D%97">Rust 版本指南</a></li>
+<li><a href="#rust-%E6%A0%87%E5%87%86%E5%BA%93%E6%89%8B%E5%86%8C%E4%B8%AD%E6%96%87%E7%89%88">Rust 标准库手册中文版</a></li>
+<li><a href="#rustt-%E4%B8%80%E4%B8%AA%E4%BC%98%E7%A7%80-rust-%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91%E4%BB%93%E5%BA%93">Rustt 一个优秀 Rust 文档翻译仓库</a></li>
+</ul>
+</li>
+<li><a href="#video">Video</a></li>
+<li><a href="#article">Article</a></li>
+<li><a href="#ide">IDE</a>
+<ul>
+<li><a href="#vscode%E9%A6%96%E6%8E%A8">VSCode（首推）</a></li>
+</ul>
+</li>
+<li><a href="#framework">Framework</a>
+<ul>
+<li><a href="#gui">GUI</a>
+<ul>
+<li><a href="#tarui">Tarui</a></li>
+<li><a href="#egui">egui</a></li>
+<li><a href="#fltk-rs">fltk-rs</a></li>
+<li><a href="#iced">iced</a></li>
+<li><a href="#druid">druid</a></li>
+<li><a href="#dioxus">Dioxus</a></li>
+</ul>
+</li>
+<li><a href="#tui">TUI</a>
+<ul>
+<li><a href="#tui-rs">tui-rs</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91">游戏开发</a>
+<ul>
+<li><a href="#bevy">Bevy</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%82%E6%AD%A5%E8%BF%90%E8%A1%8C%E6%97%B6">异步运行时</a>
+<ul>
+<li><a href="#tokio">Tokio</a></li>
+</ul>
+</li>
+<li><a href="#%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3">前端相关</a>
+<ul>
+<li><a href="#yew">Yew</a></li>
+<li><a href="#deno">Deno</a></li>
+<li><a href="#swc">SWC</a></li>
+<li><a href="#parcel">Parcel</a></li>
+<li><a href="#rome">Rome</a></li>
+<li><a href="#napi-rs">napi-rs</a></li>
+</ul>
+</li>
+<li><a href="#webassembly">WebAssembly</a>
+<ul>
+<li><a href="#wasmtime">wasmtime</a></li>
+<li><a href="#wasmer">wasmer</a></li>
+<li><a href="#wasmedge">WasmEdge</a></li>
+<li><a href="#wasi">WASI</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BD%91%E7%BB%9C">网络</a>
+<ul>
+<li><a href="#libp2p">libp2p</a></li>
+<li><a href="#rathole">rathole</a></li>
+<li><a href="#crust">Crust</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF">服务端</a>
+<ul>
+<li><a href="#rocket">Rocket</a></li>
+<li><a href="#actix-web">Actix Web</a></li>
+<li><a href="#warp">warp</a></li>
+<li><a href="#poem">poem</a></li>
+<li><a href="#axum">axum</a></li>
+<li><a href="#salvo">Salvo</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%8F%E5%88%97%E5%8C%96">序列化</a>
+<ul>
+<li><a href="#a-json">A-JSON</a></li>
+<li><a href="#json-rust">json-rust</a></li>
+<li><a href="#pikkr">pikkr</a></li>
+<li><a href="#serde-json">Serde JSON</a></li>
+<li><a href="#quick-xml">quick-xml</a></li>
+</ul>
+</li>
+<li><a href="#%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86">日期处理</a>
+<ul>
+<li><a href="#time">time</a></li>
+<li><a href="#chrono">chrono</a></li>
+<li><a href="#httpdate">httpdate</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BC%96%E7%A0%81%E5%BA%93">编码库</a>
+<ul>
+<li><a href="#base64">base64</a></li>
+<li><a href="#hmac">hmac</a></li>
+<li><a href="#jwt">jwt</a></li>
+<li><a href="#josekit">josekit</a></li>
+<li><a href="#sha">sha</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a>
+<ul>
+<li><a href="#seaorm">SeaORM</a></li>
+<li><a href="#rbatis">rbatis</a></li>
+<li><a href="#mongodb-rust-driver">MongoDB Rust Driver</a></li>
+<li><a href="#wither">wither</a></li>
+<li><a href="#redis-rs">redis-rs</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95">单元测试</a>
+<ul>
+<li><a href="#mockall">mockall</a></li>
+</ul>
+</li>
+<li><a href="#%E5%87%A0%E4%BD%95%E8%AE%A1%E7%AE%97">几何计算</a>
+<ul>
+<li><a href="#geo">geo</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86">图片处理</a>
+<ul>
+<li><a href="#image-rs">image-rs</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9F%B3%E9%A2%91%E5%A4%84%E7%90%86">音频处理</a>
+<ul>
+<li><a href="#symphonia">Symphonia</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A7%86%E9%A2%91%E5%A4%84%E7%90%86">视频处理</a>
+<ul>
+<li><a href="#ffmpeg-sys-next">ffmpeg-sys-next</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86">文档处理</a>
+<ul>
+<li><a href="#lopdf">lopdf</a></li>
+<li><a href="#pdf-rs">pdf-rs</a></li>
+<li><a href="#calamine">calamine</a></li>
+<li><a href="#docx-rs">docx-rs</a></li>
+</ul>
+</li>
+<li><a href="#ast">AST</a>
+<ul>
+<li><a href="#pandoc_ast">pandoc_ast</a></li>
+</ul>
+</li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E5%8C%96">自动化</a>
+<ul>
+<li><a href="#headless_chrome">headless_chrome</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3">系统相关</a>
+<ul>
+<li><a href="#screenshots">screenshots</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#applications">Applications</a>
+<ul>
+<li><a href="#gui-1">GUI</a>
+<ul>
+<li><a href="#appflowy">AppFlowy</a></li>
+<li><a href="#lapce">Lapce</a></li>
+<li><a href="#neovide">Neovide</a></li>
+<li><a href="#rustdesk">Rustdesk</a></li>
+</ul>
+</li>
+<li><a href="#tui-1">TUI</a>
+<ul>
+<li><a href="#gitui">GitUI</a></li>
+</ul>
+</li>
+<li><a href="#cli">CLI</a>
+<ul>
+<li><a href="#bore">bore</a></li>
+<li><a href="#cloc-rs">cloc-rs</a></li>
+<li><a href="#cargo-edit">cargo-edit</a></li>
+</ul>
+</li>
+<li><a href="#database">Database</a>
+<ul>
+<li><a href="#cnosdb">cnosdb</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#community">Community</a></li>
+<li><a href="#incident">Incident</a></li>
+<li><a href="#note">Note</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="blasting"><a class="header" href="#blasting">Blasting</a></h2>
+<blockquote>
+<p>我自己写的一些关于 Rust 特殊问题的处理和解决方案。</p>
+</blockquote>
+<h2 id="book"><a class="header" href="#book">Book</a></h2>
+<blockquote>
+<p>Rust 的书。</p>
+</blockquote>
+<h3 id="rust-语言圣经中文版"><a class="header" href="#rust-语言圣经中文版">Rust 语言圣经中文版</a></h3>
+<p><img src="https://img.shields.io/github/stars/sunface/rust-course?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/sunface/rust-course" alt="GitHub" /></p>
+<blockquote>
+<p><img src="https://github.com/sunface/rust-course/blob/main/assets/banner.jpg?raw=true" alt="img" /></p>
+<p>Rust 语言真的好：连续七年成为全世界最受欢迎的语言、没有 GC 也无需手动内存管理、性能比肩 C++/C 还能直接调用它们的代码、安全性极高 - 总有公司说使用 Rust 后以前的大部分 bug 都将自动消失、全世界最好的包管理工具 Cargo 等等。但...</p>
+</blockquote>
+<p>在线文档：<a href="https://course.rs/about-book.html">Rust 语言圣经 - Rust 语言圣经(Rust Course)</a></p>
+<p>文档仓库：<a href="https://github.com/sunface/rust-course">sunface/rust-course: “连续六年成为全世界最受喜爱的语言，无 GC 也无需手动内存管理、极高的性能和安全性、过程/OO/函数式编程、优秀的包管理、JS 未来基石&quot; — 工作之余的第二语言来试试 Rust 吧。&lt;&gt;拥有全面且深入的讲解、生动贴切的示例、德芙般丝滑的内容，甚至还有 JS 程序员关注的 WASM 和 Deno 等专题。这可能是目前最用心的 Rust 中文学习教程/书籍 (github.com)</a></p>
+<h3 id="rust-程序设计语言中文版"><a class="header" href="#rust-程序设计语言中文版">Rust 程序设计语言中文版</a></h3>
+<blockquote>
+<p>Rust 程序设计语言的本质实际在于 <strong>赋能</strong>（<em>empowerment</em>）：无论你现在编写的是何种代码，Rust 能让你在更为广泛的编程领域走得更远，写出自信。（这一点并不显而易见）</p>
+<p>举例来说，那些“系统层面”的工作涉及内存管理、数据表示和并发等底层细节。从传统角度来看，这是一个神秘的编程领域，只为浸润多年的极少数人所触及，也只有他们能避开那些臭名昭著的陷阱。即使谨慎的实践者，亦唯恐代码出现漏洞、崩溃或损坏。</p>
+<p>Rust 破除了这些障碍：它消除了旧的陷阱，并提供了伴你一路同行的友好、精良的工具。想要 “深入” 底层控制的程序员可以使用 Rust，无需时刻担心出现崩溃或安全漏洞，也无需因为工具链不靠谱而被迫去了解其中的细节。更妙的是，语言设计本身会自然而然地引导你编写出可靠的代码，并且运行速度和内存使用上都十分高效。</p>
+<p>已经在从事编写底层代码的程序员可以使用 Rust 来提升抱负。例如，在 Rust 中引入并行是相对低风险的操作，因为编译器会替你找到经典的错误。同时你可以自信地采取更加激进的优化，而不会意外引入崩溃或漏洞。</p>
+<p>但 Rust 并不局限于底层系统编程。它表达力强、写起来舒适，让人能够轻松地编写出命令行应用、网络服务器等各种类型的代码——在本书中就有这两者的简单示例。使用 Rust 能让你把在一个领域中学习的技能延伸到另一个领域：你可以通过编写网页应用来学习 Rust，接着将同样的技能应用到你的 Raspberry Pi（树莓派）上。</p>
+<p>本书全面介绍了 Rust 为用户赋予的能力。其内容平易近人，致力于帮助你提升 Rust 的知识，并且提升你作为程序员整体的理解与自信。欢迎你加入 Rust 社区，让我们准备深入学习 Rust 吧！</p>
+<p>—— Nicholas Matsakis 和 Aaron Turon</p>
+</blockquote>
+<p>在线文档：<a href="https://kaisery.github.io/trpl-zh-cn/#rust-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80">Rust 程序设计语言</a></p>
+<p>配套视频：<a href="https://www.bilibili.com/video/BV1hp4y1k7SV?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">Rust 编程语言入门教程（Rust 语言/Rust 权威指南配套）【已完结】</a></p>
+<h3 id="通过例子学-rust-中文版"><a class="header" href="#通过例子学-rust-中文版">通过例子学 Rust 中文版</a></h3>
+<p><img src="https://img.shields.io/github/stars/rust-lang-cn/rust-by-example-cn?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rust-lang-cn/rust-by-example-cn" alt="GitHub" /></p>
+<blockquote>
+<p><a href="https://www.rust-lang.org/">Rust</a> 是一门注重安全（safety）、速度（speed）和并发（concurrency）的现代系统编程语言。Rust 通过内存安全来实现以上目标，但不使用垃圾回收机制（garbage collection, GC）。</p>
+<p>《通过例子学 Rust》（Rust By Example, RBE）内容由一系列可运行的实例组成，通过这些例子阐明了各种 Rust 的概念和基本库。想获取这些例子外的更多内容，不要忘了<a href="https://www.rust-lang.org/tools/install">安装 Rust 到本地</a>并查阅<a href="https://rustwiki.org/zh-CN/std/">官方标准库文档</a>。另外为了满足您的好奇心，您还可以<a href="https://github.com/rust-lang-cn/rust-by-example-cn">查阅本网站的源代码</a>。</p>
+</blockquote>
+<p>在线文档：<a href="https://rustwiki.org/zh-CN/rust-by-example/">简介 - 通过例子学 Rust 中文版 (rustwiki.org)</a></p>
+<p>文档仓库：<a href="https://github.com/rust-lang-cn/rust-by-example-cn">rust-lang-cn/rust-by-example-cn: Rust By Example 中文版(包含在线代码编辑器) (github.com)</a></p>
+<h3 id="rustprimer"><a class="header" href="#rustprimer">RustPrimer</a></h3>
+<p><img src="https://img.shields.io/github/stars/rustcc/RustPrimer?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rustcc/RustPrimer" alt="GitHub" /></p>
+<blockquote>
+<p>给初学者的 Rust 中文教程。</p>
+</blockquote>
+<p>在线文档：<a href="https://rustcc.gitbooks.io/rustprimer/content/">Introduction · RustPrimer (gitbooks.io)</a></p>
+<p>文档仓库：<a href="https://github.com/rustcc/RustPrimer">rustcc/RustPrimer: The Rust primer for beginners. We need native English speaker help us modify the translation. (github.com)</a></p>
+<h3 id="rust-秘典中文版"><a class="header" href="#rust-秘典中文版">Rust 秘典中文版</a></h3>
+<p><img src="https://img.shields.io/github/stars/rust-lang-cn/nomicon-zh-Hans?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rust-lang-cn/nomicon-zh-Hans" alt="GitHub" /></p>
+<blockquote>
+<p>Rust 秘典挖掘了你在编写不安全 Rust 程序时需要了解的所有可怕的细节。</p>
+<p>如果你希望在编写 Rust 程序的过程中获得长久而快乐的职业生涯，你应该现在回头，忘记你曾经看过这本书。 它没有必要。 然而，如果你打算编写不安全代码——或者只是想深入了解语言的内涵——这本书包含了很多有用的信息。</p>
+</blockquote>
+<p>在线文档：<a href="https://nomicon.purewhite.io/intro.html">介绍 - Rust 秘典（死灵书） (purewhite.io)</a></p>
+<p>文档仓库：<a href="https://github.com/rust-lang-cn/nomicon-zh-Hans">rust-lang-cn/nomicon-zh-Hans: Rust 死灵书简体中文翻译 (github.com)</a></p>
+<h3 id="rust-参考手册-中文版"><a class="header" href="#rust-参考手册-中文版">Rust 参考手册 中文版</a></h3>
+<p><img src="https://img.shields.io/github/stars/rust-lang-cn/reference-cn?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rust-lang-cn/reference-cn" alt="GitHub" /></p>
+<blockquote>
+<p>本书是 Rust 编程语言的主要参考资料。它提供了三种材料:</p>
+<ul>
+<li>非正式地描述每个语言结构及其使用的章节。</li>
+<li>非正式描述内存模型、并发模型、运行时服务、链接模型和调试设施的章节。</li>
+<li>附录章节提供了影响设计的语言的原理和参考。</li>
+</ul>
+</blockquote>
+<p>在线文档：<a href="https://rustwiki.org/zh-CN/reference/">简介 - Rust 参考手册 中文版 (rustwiki.org)</a></p>
+<p>文档仓库：<a href="https://github.com/rust-lang-cn/reference-cn">rust-lang-cn/reference-cn: Rust 参考手册——Chinese translation of The Rust Reference (github.com)</a></p>
+<h3 id="rust-cookbook-中文版"><a class="header" href="#rust-cookbook-中文版">Rust Cookbook 中文版</a></h3>
+<p><img src="https://img.shields.io/github/stars/rust-lang-cn/rust-cookbook-cn?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rust-lang-cn/rust-cookbook-cn" alt="GitHub" /></p>
+<blockquote>
+<p>《Rust Cookbook 中文版》是 Rust 程序设计语言（<a href="https://rustwiki.org/zh-CN/book">Rust 官方教程简体中文版</a>）的简要实例示例集合：展示了在 Rust 生态系统中，使用各类 crate 来完成常见编程任务的良好实践。</p>
+</blockquote>
+<p>在线文档：<a href="https://rustwiki.org/zh-CN/rust-cookbook/">总览 - Rust Cookbook 中文版 (rustwiki.org)</a></p>
+<p>文档仓库：<a href="https://github.com/rust-lang-cn/rust-cookbook-cn">rust-lang-cn/rust-cookbook-cn: Rust Cookbook 中文版——Chinese translation of The Rust Cookbook (github.com)</a></p>
+<h3 id="rusty-book-锈书-"><a class="header" href="#rusty-book-锈书-">Rusty Book( 锈书 )</a></h3>
+<p><img src="https://img.shields.io/github/stars/rustlang-cn/rusty-book?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rustlang-cn/rusty-book" alt="GitHub" /></p>
+<blockquote>
+<p>在 Rust 元宇宙，夸奖别人的最高境界就是 <code>rusty</code>: 今天你&quot;锈&quot;了吗? 你的 Rust 代码好锈啊！而本书，就是精选了各种开源库和代码片段，帮助大家打造优&quot;锈&quot;的 Rust 项目。</p>
+<p>总之，如果有以下需求，那看锈书就对了：</p>
+<ul>
+<li>想要知道现在优秀的、关注度高的 Rust 项目有哪些</li>
+<li>发现一些好玩、有趣、酷炫的开源库</li>
+<li>需要寻找某个类型的库，例如，一个 HTTP 客户端或 ProtoBuffer 编码库，要求是好用、更新活跃、高质量</li>
+<li>想要寻找常用操作的代码片段，用于熟悉 Rust 或者直接复制粘贴到自己的项目中，例如文件操作、数据库操作、HTTP 请求、排序算法、正则等</li>
+</ul>
+</blockquote>
+<p>在线文档：<a href="https://rusty.rs/about.html">Rusty Book - Rusty Book(锈书)</a></p>
+<p>文档仓库：<a href="https://github.com/rustlang-cn/rusty-book">rustlang-cn/rusty-book: A curated list of recipes and repos that can be used to build your rusty projects. Rusty Book = Cookbook + Awesome Rust！ (github.com)</a></p>
+<h3 id="rust-异步编程指南"><a class="header" href="#rust-异步编程指南">Rust 异步编程指南</a></h3>
+<p><img src="https://img.shields.io/github/stars/rustlang-cn/async-book?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rustlang-cn/async-book" alt="GitHub" /></p>
+<blockquote>
+<p>该书是中文 Rust 教程 &lt;&lt;Rust 语言圣经&gt;&gt; 中的镜像专题，高质量手翻 Asynchronous Programming in Rust， 深入讲述了如何编写 Rust 高并发异步程序。</p>
+</blockquote>
+<p>文档仓库：<a href="https://github.com/rustlang-cn/async-book">rustlang-cn/async-book: 该书是中文 Rust 教程 &lt;&gt; 中的镜像专题，高质量手翻 Asynchronous Programming in Rust， 深入讲述了如何编写 Rust 高并发异步程序 (github.com)</a></p>
+<p>配套视频：<a href="https://www.bilibili.com/video/BV1Ki4y1C7gj?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">Rust Async 异步编程（完结）</a></p>
+<h3 id="rust-语言实战"><a class="header" href="#rust-语言实战">Rust 语言实战</a></h3>
+<p><img src="https://img.shields.io/github/stars/sunface/rust-by-practice?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/sunface/rust-by-practice" alt="GitHub" /></p>
+<blockquote>
+<p><em>Rust 语言实战</em> 的目标是通过大量的实战练习帮助大家更好的学习和上手使用 Rust 语言。书中的练习题非常易于使用：你所需的就是在线完成练习，并让它通过编译。</p>
+</blockquote>
+<p>在线文档：<a href="https://zh.practice.rs/why-exercise.html">关于 pracitce.rs - Rust By Practice( Rust 练习实践 )</a></p>
+<p>文档仓库：<a href="https://github.com/sunface/rust-by-practice">sunface/rust-by-practice: Learning Rust By Practice, narrowing the gap between beginner and skilled-dev with challenging examples, exercises and projects. (github.com)</a></p>
+<h3 id="rust-算法题解"><a class="header" href="#rust-算法题解">Rust 算法题解</a></h3>
+<p><img src="https://img.shields.io/github/stars/rustlang-cn/rust-algos?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rustlang-cn/rust-algos" alt="GitHub" /></p>
+<blockquote>
+<p>Rust 作为一门现代化的系统编程语言，拥有与 C/C++ 类似的性能，同时又能做非常底层的性能优化，因此非常适合写算法和 leetcode。</p>
+<p><code>algos</code> 涵盖了各种常用算法和数据结构的代码实现，以及 leetcode 题解，同时对于相关算法还提供了中文文档和注释，可以帮助大家更好、更快的学习。</p>
+</blockquote>
+<p>在线文档：<a href="https://algos.rs/">Rust 算法教程 - Rust 算法教程 The Algos (algorithms)</a></p>
+<p>文档仓库：<a href="https://github.com/rustlang-cn/rust-algos">rustlang-cn/rust-algos: &lt;&gt;，用 Rust 语言实现常见的算法和数据结构，以及 leetcode 题解，algos = algorithms，written with ❤️ by course.rs team (github.com)</a></p>
+<h3 id="rust-设计模式-中文版"><a class="header" href="#rust-设计模式-中文版">Rust 设计模式 中文版</a></h3>
+<p><img src="https://img.shields.io/github/stars/chuxiuhong/chuxiuhong-rust-patterns-zh?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/chuxiuhong/chuxiuhong-rust-patterns-zh" alt="GitHub" /></p>
+<blockquote>
+<p>有很多问题有相同的形式。 因为 Rust 不是面向对象的语言，所以设计模式与其他面向对象语言的设计模式也有所不同。 虽然细节上有所不同，但他们还是有很多相同之处：</p>
+<ul>
+<li><a href="http://chuxiuhong.com/chuxiuhong-rust-patterns-zh/patterns/index.html">设计模式</a> 是编写软件过程中解决常见问题的方法。</li>
+<li><a href="http://chuxiuhong.com/chuxiuhong-rust-patterns-zh/anti_patterns/index.html">反模式</a> 是解决常见问题的方法。 然而设计模式带给我们好处，反模式却带来更多的问题。</li>
+<li><a href="http://chuxiuhong.com/chuxiuhong-rust-patterns-zh/idioms/index.html">习惯用法</a> 是编码的指导方针。它是社区的共同规范。除非你有明确的理由， 否则就遵守它。</li>
+</ul>
+</blockquote>
+<p>在线文档：<a href="http://chuxiuhong.com/chuxiuhong-rust-patterns-zh/">引言 - Rust 设计模式 (chuxiuhong.com)</a></p>
+<p>文档仓库：<a href="https://github.com/chuxiuhong/chuxiuhong-rust-patterns-zh">chuxiuhong/chuxiuhong-rust-patterns-zh: Rust 设计模式中文翻译 (github.com)</a></p>
+<h3 id="rust-api-编写指南-中文版"><a class="header" href="#rust-api-编写指南-中文版">Rust API 编写指南 中文版</a></h3>
+<p><img src="https://img.shields.io/github/stars/zjp-CN/api-guidelines?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/zjp-CN/api-guidelines" alt="GitHub" /></p>
+<blockquote>
+<p>这是一组关于如何设计和呈现 Rust APIs 的建议。 这些建议主要由 Rust library 团队编写， 总结了 Rust 生态下构建标准库和其他 crates 的经验。</p>
+</blockquote>
+<p>在线文档：<a href="https://zjp-cn.github.io/api-guidelines/">关于本书 - Rust API Guidelines（Rust API 编写指南） (zjp-cn.github.io)</a></p>
+<p>文档仓库：<a href="https://github.com/zjp-CN/api-guidelines">zjp-CN/api-guidelines: Rust API Guidelines 中文翻译版 (github.com)</a></p>
+<h3 id="rust-宏小册tlborm"><a class="header" href="#rust-宏小册tlborm">Rust 宏小册(tlborm)</a></h3>
+<p><img src="https://img.shields.io/github/stars/DaseinPhaos/tlborm-chinese?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/DaseinPhaos/tlborm-chinese" alt="GitHub" /></p>
+<blockquote>
+<p>本书试图提炼出一份 Rust 社区对 Rust 宏知识的集锦。</p>
+</blockquote>
+<p>在线文档：<a href="https://www.bookstack.cn/read/DaseinPhaos-tlborm-chinese/README.md">Rust 宏小册 中文版 - 《Rust 宏小册 中文版》 - 书栈网 · BookStack</a></p>
+<p>文档仓库：<a href="https://github.com/DaseinPhaos/tlborm-chinese">DaseinPhaos/tlborm-chinese: Rust 宏小册, the Chinese translation of tlborm. (github.com)</a></p>
+<h3 id="嵌入式-rust-编程"><a class="header" href="#嵌入式-rust-编程">嵌入式 Rust 编程</a></h3>
+<p><img src="https://img.shields.io/github/stars/nkbai/book?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/nkbai/book" alt="GitHub" /></p>
+<blockquote>
+<p>有关如何使用 Rust 编程语言为裸机（微控制器）设备开发固件的文档</p>
+</blockquote>
+<p>在线文档：<a href="https://stevenbai.top/rustbook/book/">简介 - The Embedded Rust Book (stevenbai.top)</a></p>
+<p>文档仓库：<a href="https://github.com/nkbai/book">nkbai/book: rust 嵌入式编程书籍的翻译，原书地址 https://rust-embedded.github.io/book/</a></p>
+<h3 id="rust-rfc-book-提案书"><a class="header" href="#rust-rfc-book-提案书">Rust RFC Book (提案书)</a></h3>
+<p><img src="https://img.shields.io/github/stars/rust-lang/rfcs?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rust-lang/rfcs" alt="GitHub" /></p>
+<blockquote>
+<p>“RFC”（征求意见）过程旨在为 Rust 的更改（例如新功能）提供一致且受控的路径，以便所有利益相关者都可以对项目的方向充满信心。</p>
+</blockquote>
+<p>在线文档：<a href="https://rust-lang.github.io/rfcs/introduction.html">Introduction - The Rust RFC Book (rust-lang.github.io)</a></p>
+<p>文档仓库：<a href="https://github.com/rust-lang/rfcs">rust-lang/rfcs: RFCs for changes to Rust (github.com)</a></p>
+<h3 id="rust-unstable-book-不稳定特性书"><a class="header" href="#rust-unstable-book-不稳定特性书">Rust Unstable Book (不稳定特性书)</a></h3>
+<blockquote>
+<p>这是一本记录 rust 不稳定特性的一本书。</p>
+</blockquote>
+<p>在线文档：<a href="https://doc.rust-lang.org/nightly/unstable-book/index.html">The Unstable Book - The Rust Unstable Book (rust-lang.org)</a></p>
+<p>文档仓库：<a href="https://github.com/rust-lang/rust/tree/master/src/doc/unstable-book">rust/src/doc/unstable-book at master · rust-lang/rust (github.com)</a></p>
+<h3 id="rust-版本指南"><a class="header" href="#rust-版本指南">Rust 版本指南</a></h3>
+<p><img src="https://img.shields.io/github/stars/rust-lang/edition-guide?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rust-lang/edition-guide" alt="GitHub" /></p>
+<blockquote>
+<p>这个文档有中文版，但是我更建议看英文版，中文版更新不是很及时。
+这本书解释了“版本”的概念，即 Rust 开发的主要新时代。你可以在线阅读这本书。</p>
+</blockquote>
+<p>在线文档：<a href="https://rustwiki.org/en/edition-guide/">Introduction - The Edition Guide (rustwiki.org)</a></p>
+<p>文档仓库：<a href="https://github.com/rust-lang/edition-guide">rust-lang/edition-guide: A guide to changes between various editions of Rust (github.com)</a></p>
+<h3 id="rust-标准库手册中文版"><a class="header" href="#rust-标准库手册中文版">Rust 标准库手册中文版</a></h3>
+<blockquote>
+<p>Rust 标准库是可移植 Rust 软件的基础，这是一组针对 <a href="https://crates.io/">更广泛的 Rust 生态系统</a> 的最小且经过实战测试的共享抽象。 它提供了核心类型，例如 <a href="https://rustwiki.org/zh-CN/std/vec/struct.Vec.html"><code>Vec</code></a> 和 <a href="https://rustwiki.org/zh-CN/std/option/enum.Option.html"><code>Option</code></a>，库定义的对 <a href="https://rustwiki.org/zh-CN/std/#primitives">语言原语</a> 的操作，<a href="https://rustwiki.org/zh-CN/std/#macros">标准库宏</a>，<a href="https://rustwiki.org/zh-CN/std/io/index.html">I/O</a> 和 <a href="https://rustwiki.org/zh-CN/std/thread/index.html">多线程</a>，以及许多 <a href="https://rustwiki.org/zh-CN/std/#what-is-in-the-standard-library-documentation">其他</a> 东西。</p>
+<p>默认情况下，<code>std</code> 可用于所有 Rust crates。因此，可以通过 <a href="https://rustwiki.org/zh-CN/book/ch07-02-defining-modules-to-control-scope-and-privacy.html"><code>use</code></a> 语句使用路径 <code>std</code> 来访问标准库，就像在 <a href="https://rustwiki.org/zh-CN/std/env/index.html"><code>use std::env</code></a> 中一样。</p>
+</blockquote>
+<p>在线文档：<a href="https://rustwiki.org/zh-CN/std/">std - Rust (rustwiki.org)</a></p>
+<h3 id="rustt-一个优秀-rust-文档翻译仓库"><a class="header" href="#rustt-一个优秀-rust-文档翻译仓库">Rustt 一个优秀 Rust 文档翻译仓库</a></h3>
+<p><img src="https://img.shields.io/github/stars/rustlang-cn/Rustt?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rustlang-cn/Rustt" alt="GitHub" /></p>
+<blockquote>
+<p>Rustt (读音 / rʌsˈti /) 是 RustCn 翻译计划的英文缩写，负责将国外优秀的技术文章、学习教程、新闻资讯翻译成中文。</p>
+</blockquote>
+<p>文档仓库：<a href="https://github.com/rustlang-cn/Rustt">rustlang-cn/Rustt: 🥇RustCn 翻译计划，代号 Rustt。这里有国内最优质、最实时的 Rust 技术文章、学习资料和新闻资讯，欢迎大家 🌟 订阅。 (github.com)</a></p>
+<h2 id="video"><a class="header" href="#video">Video</a></h2>
+<blockquote>
+<p>该模块收集一些 Rust 相关的教程视频，视频主要来源 B 站和知乎。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1hp4y1k7SV?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">Rust 编程语言入门教程（Rust 语言/Rust 权威指南配套）【已完结】</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Ki4y1C7gj?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">Rust Async 异步编程（完结）</a></li>
+<li><a href="https://www.bilibili.com/video/BV16r4y187P4?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">Rust Async 异步编程 简易教程</a></li>
+<li><a href="https://www.bilibili.com/video/BV1RP4y1G7KF?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">Rust Web 全栈开发教程【完结】</a></li>
+<li><a href="https://www.bilibili.com/video/BV13a41197F1?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">使用 Async Rust 构建简单的 P2P 节点【完结】</a></li>
+<li><a href="https://www.bilibili.com/video/BV19a41127Dq?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">从零开始创建一个 WebAssembly 游戏</a></li>
+<li><a href="https://www.bilibili.com/video/BV1m94y1U7eZ?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">Rust 面试题</a></li>
+<li><a href="https://www.bilibili.com/video/BV1KT4y167f1?share_source=copy_web&amp;vd_source=48cb37f6a16cf0feaf678d7beba9e00d">可视化 Rust 各数据结构的内存布局(必看)</a></li>
+</ul>
+<h2 id="article"><a class="header" href="#article">Article</a></h2>
+<blockquote>
+<p>收集一些 Rust 比较好的文章以及一些刊报。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.rust-lang.org/zh-CN/tools/install">安装 Rust - Rust 程序设计语言 (rust-lang.org)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/365766807">浅析 rust 的内存管理 - 知乎 (zhihu.com)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/384151733">Rust: Lifetime 解惑， 生命周期还在 - 知乎 (zhihu.com)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/384496181">Rust 中的 String,&amp;str 和 str 都是什么？ - 知乎 (zhihu.com)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/21820917">类型的大小 - 知乎 (zhihu.com)</a></li>
+<li><a href="https://www.zhihu.com/question/512654366/answer/2319171118">如何深入浅出地理解 Rust 中的 Pin 和 Unpin? - 知乎 (zhihu.com)</a></li>
+<li><a href="https://blog.frognew.com/2020/07/rust-ownership-move-and-copy.html">rust 语言基础学习: rust 所有权之 Move 和 Copy 语义 - 架构小白|青蛙小白|关注程序开发、互联网技术、云原生 (frognew.com)</a></li>
+<li><a href="https://www.libhunt.com/l/rust/topic/gui">Top 23 Rust GUI Projects (Jul 2022) (libhunt.com)</a></li>
+<li><a href="https://www.zhihu.com/question/282113351/answer/2483371362">你见过哪些让你瞠目结舌的 Rust 代码技巧？ - 知乎 (zhihu.com)</a></li>
+<li><a href="https://github.com/rustlang-cn/rust-weekly">rustlang-cn/rust-weekly: Rust 语言周刊，每周五发布，精选过去一周的技术文章、业界新闻、开源项目和 Rust 语言动态 (github.com)</a></li>
+<li><a href="https://rustcc.cn/article?id=2b1703cc-36f9-4dfc-a70a-09dd67a207ab">【每周一知】Rust 中的三种设计模式 - Rust 语言中文社区 (rustcc.cn)</a></li>
+</ul>
+<h2 id="ide"><a class="header" href="#ide">IDE</a></h2>
+<blockquote>
+<p>推荐一些小编用过的编辑器</p>
+</blockquote>
+<h3 id="vscode首推"><a class="header" href="#vscode首推">VSCode（首推）</a></h3>
+<blockquote>
+<p>目前开发 Rust 最好的编辑器，需要安装插件。</p>
+</blockquote>
+<p><strong>插件推荐</strong></p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer">rust-analyzer - Visual Studio Marketplace</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml">Better TOML - Visual Studio Marketplace</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=panicbit.cargo">Cargo - Visual Studio Marketplace</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates">crates - Visual Studio Marketplace</a></li>
+</ul>
+<h2 id="framework"><a class="header" href="#framework">Framework</a></h2>
+<blockquote>
+<p>Rust 开发的框架。</p>
+</blockquote>
+<h3 id="gui"><a class="header" href="#gui">GUI</a></h3>
+<h4 id="tarui"><a class="header" href="#tarui">Tarui</a></h4>
+<p><img src="https://img.shields.io/github/stars/tauri-apps/tauri?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/tauri-apps/tauri" alt="GitHub" /></p>
+<blockquote>
+<p>Tauri 是一个为所有主要桌面平台构建微小、速度极快的二进制文件的框架。开发人员可以集成任何编译为 HTML、JS 和 CSS 的前端框架，以构建其用户界面。应用程序的后端是一个 Rust 的二进制文件，前端可以与之交互。</p>
+<p>Tauri 应用程序中的用户界面目前将 tao 用作 macOS 和 Windows 上的窗口处理库，并通过 Tauri 团队孵化和维护 WRY 在 Linux 上使用 gtk，该团队利用 macOS 上的 WebKit、Windows 上的 WebView2 和 Linux 上的 WebKitGTK，为系统 webview（以及菜单和任务栏等其他好东西）创建了统一的界面。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/tauri-apps/tauri">tauri-apps/tauri: Build smaller, faster, and more secure desktop applications with a web frontend. (github.com)</a></p>
+<p>在线网站：<a href="https://tauri.app/zh/">Build smaller, faster, and more secure desktop applications with a web frontend | Tauri Apps</a>https://tauri.studio/</p>
+<h4 id="egui"><a class="header" href="#egui">egui</a></h4>
+<p><img src="https://img.shields.io/github/stars/emilk/egui?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/emilk/egui" alt="GitHub" /></p>
+<blockquote>
+<p>egui 是一个简单、快速、高度可移植的 Rust 即时模式 GUI 库。egui 可运行于 Web, 原生（<em>Native</em>） 甚至 <a href="https://github.com/Re-Ch-Love/egui-doc-cn/blob/main/README_zh-hans.md#integrations">你喜欢的的游戏引擎</a> （即将到来）。</p>
+<p>egui 旨在成为最易用的 Rust GUI 库，用最简单的方式创建 Web 应用程序。</p>
+<p>egui 可以在任何可以绘制纹理三角形（textured triangles）的地方使用，这意味着你可以轻松地地将它集成到你选择的游戏引擎中。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/emilk/egui">emilk/egui: egui: an easy-to-use immediate mode GUI in Rust that runs on both web and native (github.com)</a></p>
+<p>中文文档：<a href="https://github.com/Re-Ch-Love/egui-doc-cn/blob/main/README_zh-hans.md">egui-doc-cn/README_zh-hans.md at main · Re-Ch-Love/egui-doc-cn (github.com)</a></p>
+<h4 id="fltk-rs"><a class="header" href="#fltk-rs">fltk-rs</a></h4>
+<p><img src="https://img.shields.io/github/stars/fltk-rs/fltk-rs?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/fltk-rs/fltk-rs" alt="GitHub" /></p>
+<blockquote>
+<p>FLTK 图形用户界面库的 Rust 绑定。
+fltk crate 是一个跨平台的轻量级 gui 库，可以静态链接以生成小型、自包含和快速的 gui 应用程序。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/fltk-rs/fltk-rs">fltk-rs/fltk-rs: Rust bindings for the FLTK GUI library. (github.com)</a></p>
+<p>在线文档：<a href="https://fltk-rs.github.io/fltk-book/">Home - fltk book (fltk-rs.github.io)</a></p>
+<h4 id="iced"><a class="header" href="#iced">iced</a></h4>
+<p><img src="https://img.shields.io/github/stars/iced-rs/iced?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/iced-rs/iced" alt="GitHub" /></p>
+<blockquote>
+<p>Rust 的跨平台 GUI 库，专注于简单性和类型安全。灵感来自 Elm。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/iced-rs/iced">iced-rs/iced: A cross-platform GUI library for Rust, inspired by Elm (github.com)</a></p>
+<h4 id="druid"><a class="header" href="#druid">druid</a></h4>
+<p><img src="https://img.shields.io/github/stars/linebender/druid?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/linebender/druid" alt="GitHub" /></p>
+<blockquote>
+<p>Druid 是一个实验性的 Rust 原生 UI 工具包。它的主要目标是提供优美的用户体验。这个目标有很多因素，包括性能、丰富的交互调色板（因此有一个小部件库来支持它们），以及与本机平台的良好配合。有关详细信息，请参阅目标部分。
+Druid 目前的发展很大程度上是由它在 Runebender 中的使用推动的，这是一种新的字体编辑器。
+我们一直在 crates.io 上定期发布 Druid，但它正在积极开发中，它的 API 可能会改变。所有更改都记录在更改日志中。
+有关一些关键概念的概述，请参阅（正在进行的工作）Druid 书。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/linebender/druid">linebender/druid: A data-first Rust-native UI design toolkit. (github.com)</a></p>
+<h4 id="dioxus"><a class="header" href="#dioxus">Dioxus</a></h4>
+<p><img src="https://img.shields.io/github/stars/DioxusLabs/dioxus?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/DioxusLabs/dioxus" alt="GitHub" /></p>
+<blockquote>
+<p>Dioxus 是一个可移植、高性能的框架，用于在 Rust 中构建跨平台的用户界面。</p>
+<p>Dioxus 可用于制作 网页程序、桌面应用、静态站点、移动端应用。</p>
+<p>Dioxus 为不同的平台都提供了很好的开发文档。</p>
+<p>如果你会使用 React ，那 Dioxus 对你来说会很简单。</p>
+<p>并且他还有 tui 的渲染器<a href="https://github.com/dioxusLabs/rink">DioxusLabs/rink: Build reactive terminal user interfaces using Rust and Dioxus. (github.com)</a></p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/DioxusLabs/dioxus">DioxusLabs/dioxus: Friendly React-like GUI library for desktop, web, mobile, and more. (github.com)</a></p>
+<p>中文文档：<a href="https://github.com/DioxusLabs/dioxus/blob/master/notes/README/ZH_CN.md">dioxus/ZH_CN.md at master · DioxusLabs/dioxus (github.com)</a></p>
+<h3 id="tui"><a class="header" href="#tui">TUI</a></h3>
+<h4 id="tui-rs"><a class="header" href="#tui-rs">tui-rs</a></h4>
+<p><img src="https://img.shields.io/github/stars/fdehau/tui-rs?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/fdehau/tui-rs" alt="GitHub" /></p>
+<blockquote>
+<p>tui-rs 是一个 Rust 库，用于构建丰富的终端用户界面和仪表板。它深受 Javascript 库 blessed-contrib 和 Go 库 termui 的启发。</p>
+<p><a href="https://github.com/fdehau/tui-rs/blob/master/assets/demo.gif"><img src="https://github.com/fdehau/tui-rs/raw/master/assets/demo.gif" alt="Demo cast under Linux Termite with Inconsolata font 12pt" /></a></p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/fdehau/tui-rs">fdehau/tui-rs: Build terminal user interfaces and dashboards using Rust (github.com)</a></p>
+<h3 id="游戏开发"><a class="header" href="#游戏开发">游戏开发</a></h3>
+<h4 id="bevy"><a class="header" href="#bevy">Bevy</a></h4>
+<p><img src="https://img.shields.io/github/stars/bevyengine/bevy?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/bevyengine/bevy" alt="GitHub" /></p>
+<blockquote>
+<p>Bevy 是 Rust 内置的令人耳目一新的简单数据驱动游戏引擎。它永远是免费和开源的！</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/bevyengine/bevy">bevyengine/bevy: A refreshingly simple data-driven game engine built in Rust (github.com)</a></p>
+<h3 id="异步运行时"><a class="header" href="#异步运行时">异步运行时</a></h3>
+<h4 id="tokio"><a class="header" href="#tokio">Tokio</a></h4>
+<p><img src="https://img.shields.io/github/stars/tokio-rs/tokio?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/tokio-rs/tokio" alt="GitHub" /></p>
+<blockquote>
+<p>Tokio 是 Rust 编程语言的异步运行时。它提供了编写网络应用程序所需的构建块。它提供了针对广泛系统的灵活性，从具有数十个内核的大型服务器到小型嵌入式设备。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/tokio-rs/tokio">tokio-rs/tokio: A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ... (github.com)</a></p>
+<p>在线网站：<a href="https://tokio.rs/">Tokio - An asynchronous Rust runtime</a></p>
+<p>中文文档：<a href="https://github.com/rustlang-cn/Rustt/tree/main/Books/Tokio-Tutorial">Rustt/Books/Tokio-Tutorial at main · rustlang-cn/Rustt (github.com)</a></p>
+<h3 id="前端相关"><a class="header" href="#前端相关">前端相关</a></h3>
+<h4 id="yew"><a class="header" href="#yew">Yew</a></h4>
+<p><img src="https://img.shields.io/github/stars/jetli/awesome-yew?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/jetli/awesome-yew" alt="GitHub" /></p>
+<blockquote>
+<p><strong>Yew</strong> 是一个设计先进的 <a href="https://www.rust-lang.org/">Rust</a> 框架，目的是使用 <a href="https://webassembly.org/">WebAssembly</a> 来创建多线程的前端 web 应用。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/yewstack/yew">yewstack/yew: Rust / Wasm framework for building client web apps (github.com)</a></p>
+<p>资源仓库：<a href="https://github.com/jetli/awesome-yew">jetli/awesome-yew: 😎 A curated list of awesome things related to Yew / WebAssembly. (github.com)</a></p>
+<h4 id="deno"><a class="header" href="#deno">Deno</a></h4>
+<p><img src="https://img.shields.io/github/stars/denoland/deno?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/denoland/deno" alt="GitHub" /></p>
+<blockquote>
+<p>Deno 是一个简单、现代且安全的 JavaScript 和 TypeScript 运行时，它使用 V8 并内置于 Rust。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/denoland/deno">denoland/deno: A modern runtime for JavaScript and TypeScript. (github.com)</a></p>
+<h4 id="swc"><a class="header" href="#swc">SWC</a></h4>
+<p><img src="https://img.shields.io/github/stars/swc-project/swc?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/swc-project/swc" alt="GitHub" /></p>
+<blockquote>
+<p>一个代码打包器。</p>
+<p>SWC（代表 Speedy Web Compiler）是一个用 Rust 编写的超快速 TypeScript / JavaScript 编译器。它同时是 Rust 和 JavaScript 的库。如果您使用 Rust 的 SWC，请参阅 rustdoc，对于大多数用户，您使用该库的入口点将是解析器。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/swc-project/swc">swc-project/swc: Rust-based platform for the Web (github.com)</a></p>
+<h4 id="parcel"><a class="header" href="#parcel">Parcel</a></h4>
+<p><img src="https://img.shields.io/github/stars/parcel-bundler/parcel?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/parcel-bundler/parcel" alt="GitHub" /></p>
+<blockquote>
+<p>Parcel 是用于 web 的零配置构建工具。它将优秀的开箱即用的开发经验与可扩展的体系结构结合在一起，可以将您的项目从刚开始的阶段转变为大规模的生产应用程序。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/parcel-bundler/parcel">parcel-bundler/parcel: The zero configuration build tool for the web. 📦🚀 (github.com)</a></p>
+<h4 id="rome"><a class="header" href="#rome">Rome</a></h4>
+<p><img src="https://img.shields.io/github/stars/rome/tools?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rome/tools" alt="GitHub" /></p>
+<blockquote>
+<p>Rome 是用于 JavaScript、TypeScript、JSON、HTML、Markdown 和 CSS 的格式化程序、linter、捆绑程序等。
+Rome 旨在取代 Babel、ESLint、webpack、Prettier、Jest 等。
+Rome 统一了以前是独立工具的功能。建立在一个共享的基础上，我们可以为处理代码、显示错误、并行化工作、缓存和配置提供一种内聚的体验。
+Rome 有很强的约定，旨在具有最小的配置。阅读更多关于我们的项目理念的信息。
+Rome 是用 Rust 编写的。
+Rome 拥有一流的 IDE 支持，具有复杂的解析器，可以完全保真地表示源文本和一流的错误恢复。
+Rome 是麻省理工学院根据贡献者契约行为准则获得许可和管理的。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/rome/tools">rome/tools: The Rome Toolchain. A linter, compiler, bundler, and more for JavaScript, TypeScript, HTML, Markdown, and CSS. (github.com)</a></p>
+<h4 id="napi-rs"><a class="header" href="#napi-rs">napi-rs</a></h4>
+<p><img src="https://img.shields.io/github/stars/napi-rs/napi-rs?style=flat" alt="stars" /> <a href="https://docs.rs/crate/napi"><img src="https://camo.githubusercontent.com/12926a0d167dddc752b4a243bdfe42510ec152c409e0adb5c5a0358d69b2f955/68747470733a2f2f646f63732e72732f6e6170692f62616467652e737667" alt="img" /></a> <a href="https://crates.io/crates/napi"><img src="https://camo.githubusercontent.com/50f427da9d2e4aefd0501af3a6463800ae9c07ecf76495ae40048f1b76d267f0/68747470733a2f2f696d672e736869656c64732e696f2f6372617465732f762f6e6170692e737667" alt="img" /></a> <a href="https://www.npmjs.com/package/@napi-rs/cli"><img src="https://camo.githubusercontent.com/19bbf2a0c1204f71ecf1ed7ff797200fe2129e276fb18c33e8e3b24c85f460eb/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f406e6170692d72732f636c692e737667" alt="img" /></a></p>
+<blockquote>
+<p>用于在 Rust 中构建已编译的 Node.js 附加组件的最小库。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/napi-rs/napi-rs">napi-rs/napi-rs: A framework for building compiled Node.js add-ons in Rust via Node-API (github.com)</a></p>
+<h3 id="webassembly"><a class="header" href="#webassembly">WebAssembly</a></h3>
+<h4 id="wasmtime"><a class="header" href="#wasmtime">wasmtime</a></h4>
+<p><img src="https://img.shields.io/github/stars/bytecodealliance/wasmtime?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/bytecodealliance/wasmtime" alt="GitHub" /></p>
+<blockquote>
+<p>WebAssembly 的运行时</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/bytecodealliance/wasmtime">bytecodealliance/wasmtime: A standalone runtime for WebAssembly (github.com)</a></p>
+<h4 id="wasmer"><a class="header" href="#wasmer">wasmer</a></h4>
+<p><img src="https://img.shields.io/github/stars/wasmerio/wasmer?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/wasmerio/wasmer" alt="GitHub" /></p>
+<blockquote>
+<p>WebAssembly 又一个运行时</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/wasmerio/wasmer">wasmerio/wasmer: 🚀 The leading WebAssembly Runtime supporting WASI and Emscripten (github.com)</a></p>
+<h4 id="wasmedge"><a class="header" href="#wasmedge">WasmEdge</a></h4>
+<p><img src="https://img.shields.io/github/stars/WasmEdge/WasmEdge?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/WasmEdge/WasmEdge" alt="GitHub" /></p>
+<blockquote>
+<p>WebAssembly 又又一个运行时</p>
+<p>WasmEdge 是一个轻量级、高性能和可扩展的 WebAssembly 运行时，适用于云原生、边缘和去中心化应用程序。它为无服务器应用程序、嵌入式功能、微服务、智能合约和物联网设备提供支持。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/WasmEdge/WasmEdge">WasmEdge/WasmEdge: WasmEdge is a lightweight, high-performance, and extensible WebAssembly runtime for cloud native, edge, and decentralized applications. It powers serverless apps, embedded functions, microservices, smart contracts, and IoT devices. (github.com)</a></p>
+<h4 id="wasi"><a class="header" href="#wasi">WASI</a></h4>
+<p><img src="https://img.shields.io/github/stars/WebAssembly/WASI?style=flat" alt="stars" /> <a href="https://doi.org/10.5281/zenodo.4323447"><img src="https://camo.githubusercontent.com/968b57157bc1ae57a965f38fa2fd266cc458f510dc81413e4482d8c8484bf054/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f444f492f31302e353238312f7a656e6f646f2e343332333434372e737667" alt="DOI" /></a></p>
+<blockquote>
+<p>为 WebAssembly 提供内部调用接口的库</p>
+<p>WASI 不是一个单一的标准系统接口，而是标准化 API 的模块化集合。不需要实现任何 API 即可具有兼容的运行时。相反，主机环境可以选择哪些 API 对其用例有意义。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/WebAssembly/WASI">WebAssembly/WASI: WebAssembly System Interface (github.com)</a></p>
+<h3 id="网络"><a class="header" href="#网络">网络</a></h3>
+<h4 id="libp2p"><a class="header" href="#libp2p">libp2p</a></h4>
+<p><img src="https://img.shields.io/github/stars/libp2p/rust-libp2p?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/libp2p/rust-libp2p" alt="GitHub" /></p>
+<blockquote>
+<p>构建 p2p 网络的包
+运行您的网络应用程序，不受运行时和地址服务的影响，与它们的位置无关。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/libp2p/rust-libp2p">libp2p/rust-libp2p: The Rust Implementation of the libp2p networking stack. (github.com)</a></p>
+<h4 id="rathole"><a class="header" href="#rathole">rathole</a></h4>
+<p><img src="https://img.shields.io/github/stars/rapiz1/rathole?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rapiz1/rathole" alt="GitHub" /></p>
+<blockquote>
+<p>安全、稳定、高性能的内网穿透工具，用 Rust 语言编写</p>
+<p>rathole，类似于 <a href="https://github.com/fatedier/frp">frp</a> 和 <a href="https://github.com/inconshreveable/ngrok">ngrok</a>，可以让 NAT 后的设备上的服务通过具有公网 IP 的服务器暴露在公网上。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/rapiz1/rathole">rapiz1/rathole: A lightweight and high-performance reverse proxy for NAT traversal, written in Rust. An alternative to frp and ngrok. (github.com)</a></p>
+<p>中文文档：<a href="https://github.com/rapiz1/rathole/blob/main/README-zh.md">rathole/README-zh.md at main · rapiz1/rathole (github.com)</a></p>
+<h4 id="crust"><a class="header" href="#crust">Crust</a></h4>
+<p><img src="https://img.shields.io/github/stars/maidsafe-archive/crust?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/maidsafe-archive/crust" alt="GitHub" /></p>
+<blockquote>
+<p>Rust 中具有 NAT 遍历的可靠 p2p 网络连接。任何无服务器、去中心化项目最需要的库之一。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/maidsafe-archive/crust">maidsafe-archive/crust: Reliable p2p network connections in Rust with NAT traversal. One of the most needed libraries for any server-less / decentralised projects (github.com)</a></p>
+<h3 id="服务端"><a class="header" href="#服务端">服务端</a></h3>
+<h4 id="rocket"><a class="header" href="#rocket">Rocket</a></h4>
+<p><img src="https://img.shields.io/github/stars/SergioBenitez/Rocket?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/SergioBenitez/Rocket" alt="GitHub" /></p>
+<blockquote>
+<p><a href="https://github.com/SergioBenitez/Rocket">Rocket</a>是 Rust 生态系统中对初学者来说最容易上手的 web 框架。</p>
+<p>它是高度可定制化的，可以快速启动一个新的应用程序。同时，它避免了许多不必要的文件。</p>
+<p>与 Actix Web 不同的是，该框架运行在 Rust 语言的“实验”版本)上。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/SergioBenitez/Rocket">SergioBenitez/Rocket: A web framework for Rust. (github.com)</a></p>
+<h4 id="actix-web"><a class="header" href="#actix-web">Actix Web</a></h4>
+<p><img src="https://img.shields.io/github/stars/actix/actix-web?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/actix/actix-web" alt="GitHub" /></p>
+<blockquote>
+<p>Actix Web 是一个功能强大、实用且速度极快的 Rust Web 框架.</p>
+<ul>
+<li>支持 HTTP/1.x 和 HTTP/2</li>
+<li>流和流水线</li>
+<li>带有可选宏的强大请求路由</li>
+<li>完全兼容 Tokio</li>
+<li>保持活动和缓慢的请求处理</li>
+<li>客户端/服务器 WebSocket 支持</li>
+<li>透明内容压缩/解压缩（br、gzip、deflate、zstd）</li>
+<li>多部分流</li>
+<li>静态资产</li>
+<li>使用 OpenSSL 或 Rustls 的 SSL 支持</li>
+<li>中间件（记录器、会话、CORS 等）</li>
+<li>与 awc HTTP 客户端集成</li>
+<li>在稳定的 Rust 1.57+ 上运行</li>
+</ul>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/actix/actix-web">actix/actix-web: Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. (github.com)</a></p>
+<h4 id="warp"><a class="header" href="#warp">warp</a></h4>
+<p><img src="https://img.shields.io/github/stars/seanmonstar/warp?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/seanmonstar/warp" alt="GitHub" /></p>
+<blockquote>
+<p>一个超级简单、可组合的 web 服务器框架，用于提高 warp 速度。
+warp 的基本构建块是过滤器：它们可以组合和组合来表达对请求的丰富需求。
+由于其过滤器系统，warp 提供了这些开箱即用的功能：</p>
+<ul>
+<li>路径路由和参数提取</li>
+<li>标头要求和提取</li>
+<li>查询字符串反序列化</li>
+<li>JSON 和表单主体</li>
+<li>多部分表单数据</li>
+<li>静态文件和目录</li>
+<li>网络套接字</li>
+<li>访问记录</li>
+<li>Gzip、Deflate 和 Brotli 压缩</li>
+</ul>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/seanmonstar/warp">seanmonstar/warp: A super-easy, composable, web server framework for warp speeds. (github.com)</a></p>
+<h4 id="poem"><a class="header" href="#poem">poem</a></h4>
+<p><img src="https://img.shields.io/github/stars/poem-web/poem?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/poem-web/poem" alt="GitHub" /></p>
+<blockquote>
+<p>一个功能齐全且易于使用的 Web 框架，采用 Rust 编程语言。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/poem-web/poem">poem-web/poem: A full-featured and easy-to-use web framework with the Rust programming language. (github.com)</a></p>
+<h4 id="axum"><a class="header" href="#axum">axum</a></h4>
+<p><img src="https://img.shields.io/github/stars/tokio-rs/axum?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/tokio-rs/axum" alt="GitHub" /></p>
+<blockquote>
+<p>axum 是一个专注于人体工程学和模块化的 Web 应用程序框架。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/tokio-rs/axum">tokio-rs/axum: Ergonomic and modular web framework built with Tokio, Tower, and Hyper (github.com)</a></p>
+<h4 id="salvo"><a class="header" href="#salvo">Salvo</a></h4>
+<p><img src="https://img.shields.io/github/stars/salvo-rs/salvo?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/salvo-rs/salvo" alt="GitHub" /></p>
+<blockquote>
+<p>Salvo 是一个极其简单且功能强大的 Rust Web 后端框架. 仅仅需要基础 Rust 知识即可开发后端服务.</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/salvo-rs/salvo">salvo-rs/salvo: Salvo is a powerful and simplest web server framework in Rust world (github.com)</a></p>
+<h3 id="序列化"><a class="header" href="#序列化">序列化</a></h3>
+<h4 id="a-json"><a class="header" href="#a-json">A-JSON</a></h4>
+<p><img src="https://img.shields.io/github/stars/importcjj/rust-ajson?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/importcjj/rust-ajson" alt="GitHub" /></p>
+<blockquote>
+<p>gjson 的 Rust 移植，通过 dotpath 语法获取 JSON 值。原名为：rust-ajson</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/importcjj/rust-ajson">importcjj/rust-ajson: Rust port of gjson，get JSON value by dotpath syntax (github.com)</a></p>
+<h4 id="json-rust"><a class="header" href="#json-rust">json-rust</a></h4>
+<p><img src="https://img.shields.io/github/stars/maciejhirsz/json-rust?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/maciejhirsz/json-rust" alt="GitHub" /></p>
+<blockquote>
+<p>轻松解析和序列化 JSON。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/maciejhirsz/json-rust">maciejhirsz/json-rust: JSON implementation in Rust (github.com)</a></p>
+<h4 id="pikkr"><a class="header" href="#pikkr">pikkr</a></h4>
+<p><img src="https://img.shields.io/github/stars/pikkr/pikkr?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/pikkr/pikkr" alt="GitHub" /></p>
+<blockquote>
+<p>JSON 解析器直接获取值而不在 Rust 中执行标记化。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/pikkr/pikkr">pikkr/pikkr: JSON parser which picks up values directly without performing tokenization in Rust (github.com)</a></p>
+<h4 id="serde-json"><a class="header" href="#serde-json">Serde JSON</a></h4>
+<p><img src="https://img.shields.io/github/stars/serde-rs/json?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/serde-rs/json" alt="GitHub" /></p>
+<blockquote>
+<p>Serde 是一个用于高效且通用地序列化和反序列化 Rust 数据结构的框架。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/serde-rs/json">serde-rs/json: Strongly typed JSON library for Rust (github.com)</a></p>
+<h4 id="quick-xml"><a class="header" href="#quick-xml">quick-xml</a></h4>
+<p><img src="https://img.shields.io/github/stars/tafia/quick-xml?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/tafia/quick-xml" alt="GitHub" /></p>
+<blockquote>
+<p>高性能 xml pull reader/writer。
+几乎是零拷贝（尽可能使用 Cow）
+易于分配内存（API 提供了一种重用缓冲区的方法）
+支持各种编码（具有编码功能）、命名空间解析、特殊字符。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/tafia/quick-xml">tafia/quick-xml: Rust high performance xml reader and writer (github.com)</a></p>
+<h3 id="日期处理"><a class="header" href="#日期处理">日期处理</a></h3>
+<h4 id="time"><a class="header" href="#time">time</a></h4>
+<p><img src="https://img.shields.io/github/stars/time-rs/time?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/time-rs/time" alt="GitHub" /></p>
+<blockquote>
+<p>日期和时间库。与标准库完全互操作。大部分与#![no_std] 兼容。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/time-rs/time">time-rs/time: Simple time handling in Rust (github.com)</a></p>
+<h4 id="chrono"><a class="header" href="#chrono">chrono</a></h4>
+<p><img src="https://img.shields.io/github/stars/chronotope/chrono?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/chronotope/chrono" alt="GitHub" /></p>
+<blockquote>
+<p>它的目标是成为一个功能完整的时间库的超集。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/chronotope/chrono">chronotope/chrono: Date and time library for Rust (github.com)</a></p>
+<h4 id="httpdate"><a class="header" href="#httpdate">httpdate</a></h4>
+<p><img src="https://img.shields.io/github/stars/pyfisch/httpdate?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/pyfisch/httpdate" alt="GitHub" /></p>
+<blockquote>
+<p>HTTP 的日期和时间工具。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/pyfisch/httpdate">pyfisch/httpdate: HTTP date parsing and formatting (github.com)</a></p>
+<h3 id="编码库"><a class="header" href="#编码库">编码库</a></h3>
+<h4 id="base64"><a class="header" href="#base64">base64</a></h4>
+<p><img src="https://img.shields.io/github/stars/marshallpierce/rust-base64?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/marshallpierce/rust-base64" alt="GitHub" /></p>
+<blockquote>
+<p>故名思义就是 base64 的编码库。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/marshallpierce/rust-base64">marshallpierce/rust-base64: base64, in rust (github.com)</a></p>
+<h4 id="hmac"><a class="header" href="#hmac">hmac</a></h4>
+<p><img src="https://img.shields.io/github/stars/RustCrypto/MACs?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/RustCrypto/MACs" alt="GitHub" /></p>
+<blockquote>
+<p>用纯 Rust 编写的消息认证代码算法</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/RustCrypto/MACs">RustCrypto/MACs: Message authentication code algorithms written in pure Rust (github.com)</a></p>
+<h4 id="jwt"><a class="header" href="#jwt">jwt</a></h4>
+<p><img src="https://img.shields.io/github/stars/mikkyang/rust-jwt?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/mikkyang/rust-jwt" alt="GitHub" /></p>
+<blockquote>
+<p>JSON Web 令牌库。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/mikkyang/rust-jwt">mikkyang/rust-jwt: JSON Web Token library for Rust (github.com)</a></p>
+<h4 id="josekit"><a class="header" href="#josekit">josekit</a></h4>
+<p><img src="https://img.shields.io/github/stars/hidekatsu-izuno/josekit-rs?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/hidekatsu-izuno/josekit-rs" alt="GitHub" /></p>
+<blockquote>
+<p>和上面的库差不多，功能更强大。</p>
+<p>JOSE（Javascript 对象签名和加密：JWT、JWS、JWE、JWA、JWK）库，基于 Rust 的 OpenSSL。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/hidekatsu-izuno/josekit-rs">hidekatsu-izuno/josekit-rs: JOSE (Javascript Object Signing and Encryption) library for Rust (based on OpenSSL). (github.com)</a></p>
+<h4 id="sha"><a class="header" href="#sha">sha</a></h4>
+<p><img src="https://img.shields.io/github/stars/andydude/rust-sha?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rustdesk/rustdesk" alt="GitHub" /></p>
+<blockquote>
+<p>Rust 安全哈希算法 (SHA) 内在库。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/andydude/rust-sha/">andydude/rust-sha: Rust Cryptography Intrinsics (github.com)</a></p>
+<h3 id="数据库"><a class="header" href="#数据库">数据库</a></h3>
+<h4 id="seaorm"><a class="header" href="#seaorm">SeaORM</a></h4>
+<p><img src="https://img.shields.io/github/stars/SeaQL/sea-orm?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/SeaQL/sea-orm" alt="GitHub" /></p>
+<blockquote>
+<p>SeaORM 是一种关系 ORM，可帮助您使用熟悉的动态语言在 Rust 中构建 Web 服务。</p>
+<p>目前支持:</p>
+<ul>
+<li><code>sqlx-mysql</code>- SQLx MySQL</li>
+<li><code>sqlx-postgres</code>- SQLx PostgreSQL</li>
+<li><code>sqlx-sqlite</code>- SQLx SQLite</li>
+</ul>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/SeaQL/sea-orm">SeaQL/sea-orm: 🐚 An async &amp; dynamic ORM for Rust (github.com)</a></p>
+<h4 id="rbatis"><a class="header" href="#rbatis">rbatis</a></h4>
+<p><img src="https://img.shields.io/github/stars/rbatis/rbatis?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rbatis/rbatis" alt="GitHub" /></p>
+<blockquote>
+<p>受 Mybatis 和 MybatisPlus 启发，用 Rust 编写的高性能、安全、动态 SQL（编译时）ORM 框架。</p>
+<ul>
+<li>- 编译时动态 sql（mybatis 动态 sql 标签）、全异步(Future)、生产实践(<a href="https://github.com/rbatis/abs_admin">abs_admin</a>)、</li>
+<li>- 内存安全，协程安全，事务安全(防忘提交)，百分百 safe 代码</li>
+<li>- 多种插件，分页/逻辑删除/sql 拦截器/CRUD/Wrapper/PySQL/HtmlSQL</li>
+</ul>
+<p>支持数据库：</p>
+<div class="table-wrapper"><table><thead><tr><th>数据库</th><th>已支持</th></tr></thead><tbody>
+<tr><td>Mysql</td><td>√</td></tr>
+<tr><td>Postgres</td><td>√</td></tr>
+<tr><td>Sqlite</td><td>√</td></tr>
+<tr><td>Mssql/Sqlserver</td><td>√(50%)</td></tr>
+<tr><td>MariaDB(Mysql)</td><td>√</td></tr>
+<tr><td>TiDB(Mysql)</td><td>√</td></tr>
+<tr><td>CockroachDB(Postgres)</td><td>√</td></tr>
+</tbody></table>
+</div></blockquote>
+<p>代码仓库：<a href="https://github.com/rbatis/rbatis">rbatis/rbatis: Rust High Performance compile-time ORM(RBSON based) (github.com)</a></p>
+<h4 id="mongodb-rust-driver"><a class="header" href="#mongodb-rust-driver">MongoDB Rust Driver</a></h4>
+<p><img src="https://img.shields.io/github/stars/mongodb/mongo-rust-driver?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/mongodb/mongo-rust-driver" alt="GitHub" /></p>
+<blockquote>
+<p>此存储库包含官方支持的 MongoDB Rust 驱动程序，这是一个客户端库，可用于与 Rust 应用程序中的 MongoDB 部署进行交互。它使用 bson crate 来支持 BSON。该驱动程序包含一个完全异步的 API，它支持 tokio（默认）或 async-std，具体取决于设置的功能标志。驱动程序还有一个同步 API，可以通过功能标志启用。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/mongodb/mongo-rust-driver">mongodb/mongo-rust-driver: The official MongoDB Rust Driver (github.com)</a></p>
+<h4 id="wither"><a class="header" href="#wither">wither</a></h4>
+<p><img src="https://img.shields.io/github/stars/thedodd/wither?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/thedodd/wither" alt="GitHub" /></p>
+<blockquote>
+<p>该项目的主要目标是基于数据模型为 MongoDB 提供一个简单、健全且可预测的接口。如果在任何时候该系统可能会妨碍您，您可以直接访问底层驱动程序。该项目针对 MongoDB 3.6、4.0、4.2 和 4.4 进行了测试。
+好消息！ Wither 现在基于官方的 MongoDB Rust 驱动程序。由于驱动程序的进步，Wither 现在是完全异步的。简单地镜像底层 MongoDB 驱动程序的功能，Wither 支持以下运行时：
+tokio-runtime（默认）激活 tokio 运行时。
+async-std-runtime 激活 async-std 运行时。
+由于底层驱动程序的更新，Model trait 以及 Model 派生宏有相当多的重大变化。详细信息可以在更改日志和文档中找到。此外，现在默认情况下一切都是异步的，并且同步接口已从 repo 中完全删除。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/thedodd/wither">thedodd/wither: An ODM for MongoDB built on the official MongoDB Rust driver. (github.com)</a></p>
+<h4 id="redis-rs"><a class="header" href="#redis-rs">redis-rs</a></h4>
+<p><img src="https://img.shields.io/github/stars/redis-rs/redis-rs?style=flat" alt="stars" /><img src="https://img.shields.io/github/license/redis-rs/redis-rs" alt="GitHub" /></p>
+<blockquote>
+<p>Redis-rs 是 Rust 的高级 redis 库。它通过非常灵活但低级的 API 提供对所有 Redis 功能的便捷访问。它使用可自定义的类型转换特征，因此任何操作都可以返回您期望的类型的结果。这带来了非常愉快的开发体验。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/redis-rs/redis-rs">redis-rs/redis-rs: Redis library for rust (github.com)</a></p>
+<h3 id="单元测试"><a class="header" href="#单元测试">单元测试</a></h3>
+<h4 id="mockall"><a class="header" href="#mockall">mockall</a></h4>
+<p><img src="https://img.shields.io/github/stars/asomers/mockall?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/asomers/mockall" alt="GitHub" /></p>
+<blockquote>
+<p>适用于 Rust 的强大模拟对象库。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/asomers/mockall">asomers/mockall: A powerful mock object library for Rust (github.com)</a></p>
+<h3 id="几何计算"><a class="header" href="#几何计算">几何计算</a></h3>
+<h4 id="geo"><a class="header" href="#geo">geo</a></h4>
+<p><img src="https://img.shields.io/github/stars/georust/geo?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/georust/geo" alt="GitHub" /></p>
+<blockquote>
+<p>geo crate 提供了点、线串和多边形等地理空间基元类型，并提供了算法和操作，例如：
+面积和质心计算</p>
+<ul>
+<li>简化和凸包操作</li>
+<li>欧几里得和哈弗辛距离测量</li>
+<li>交叉口检查</li>
+<li>仿射变换，例如旋转和平移。</li>
+</ul>
+<p>⚠️：如果需要计算距离所有的坐标使用 f64，这是小编踩过的坑.</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/georust/geo">georust/geo: Geospatial primitives and algorithms for Rust (github.com)</a></p>
+<h3 id="图片处理"><a class="header" href="#图片处理">图片处理</a></h3>
+<h4 id="image-rs"><a class="header" href="#image-rs">image-rs</a></h4>
+<p><img src="https://img.shields.io/github/stars/image-rs/image?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/image-rs/image" alt="GitHub" /></p>
+<blockquote>
+<p>这个 crate 提供了基本的图像处理功能和方法来转换各种图像格式。
+提供的所有图像处理函数都对实现 GenericImageView 和 GenericImage 特征并返回 ImageBuffer 的类型进行操作。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/image-rs/image">image-rs/image: Encoding and decoding images in Rust (github.com)</a></p>
+<h3 id="音频处理"><a class="header" href="#音频处理">音频处理</a></h3>
+<h4 id="symphonia"><a class="header" href="#symphonia">Symphonia</a></h4>
+<p><img src="https://img.shields.io/github/stars/pdeljanov/Symphonia?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/pdeljanov/Symphonia" alt="GitHub" /></p>
+<blockquote>
+<p>Symphonia 是一个纯 Rust 音频解码和媒体解复用库，支持 AAC、ALAC、FLAC、MKV、MP3、MP4、OGG、Vorbis、WAV 和 WebM。</p>
+<p>功能介绍</p>
+<ul>
+<li>解码支持最流行的音频编解码器，支持无间隙播放</li>
+<li>解码最常见的媒体容器格式</li>
+<li>读取大多数元数据和标签格式</li>
+<li>自动检测格式和解码器</li>
+<li>有效处理音频数据的基本音频原语</li>
+<li>100%安全的 Rust</li>
+<li>最小的依赖性</li>
+<li>速度快，性能不打折扣!</li>
+</ul>
+<p>此外，计划的功能包括</p>
+<ul>
+<li>提供一个 C 语言的 API，以便与其他语言集成</li>
+<li>为网络使用提供 WASM API</li>
+</ul>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/pdeljanov/Symphonia">pdeljanov/Symphonia: Pure Rust multimedia format demuxing, tag reading, and audio decoding library (github.com)</a></p>
+<h3 id="视频处理"><a class="header" href="#视频处理">视频处理</a></h3>
+<h4 id="ffmpeg-sys-next"><a class="header" href="#ffmpeg-sys-next">ffmpeg-sys-next</a></h4>
+<p><img src="https://img.shields.io/github/stars/zmwangx/rust-ffmpeg-sys?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/zmwangx/rust-ffmpeg-sys" alt="GitHub" /></p>
+<blockquote>
+<p>Rust 的一个视频处理库，绑定自 ffmpeng。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/zmwangx/rust-ffmpeg-sys">zmwangx/rust-ffmpeg-sys: FFmpeg bindings for Rust. (github.com)</a></p>
+<h3 id="文档处理"><a class="header" href="#文档处理">文档处理</a></h3>
+<h4 id="lopdf"><a class="header" href="#lopdf">lopdf</a></h4>
+<p><img src="https://img.shields.io/github/stars/J-F-Liu/lopdf?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/J-F-Liu/lopdf" alt="GitHub" /></p>
+<blockquote>
+<p>用于 PDF 文档操作的 Rust 库。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/J-F-Liu/lopdf">J-F-Liu/lopdf: A Rust library for PDF document manipulation. (github.com)</a></p>
+<h4 id="pdf-rs"><a class="header" href="#pdf-rs">pdf-rs</a></h4>
+<p><img src="https://img.shields.io/github/stars/pdf-rs/pdf?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/pdf-rs/pdf" alt="GitHub" /></p>
+<blockquote>
+<p>用于读取、操作和编写 PDF 文件的 Rust 库。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/pdf-rs/pdf">pdf-rs/pdf: Rust library to read, manipulate and write PDF files. (github.com)</a></p>
+<h4 id="calamine"><a class="header" href="#calamine">calamine</a></h4>
+<p><img src="https://img.shields.io/github/stars/tafia/calamine?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/tafia/calamine" alt="GitHub" /></p>
+<blockquote>
+<p>Rust 编写的 Excel/OpenDocument 电子表格文件阅读器/反序列化器。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/tafia/calamine">tafia/calamine: A pure Rust Excel/OpenDocument SpeadSheets file reader: rust on metal sheets (github.com)</a></p>
+<h4 id="docx-rs"><a class="header" href="#docx-rs">docx-rs</a></h4>
+<p><img src="https://img.shields.io/github/stars/bokuweb/docx-rs?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/bokuweb/docx-rs" alt="GitHub" /></p>
+<blockquote>
+<p>一个带有 Rust/WebAssembly 的.docx 文件编写器。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/bokuweb/docx-rs">bokuweb/docx-rs: A .docx file writer with Rust/WebAssembly. (github.com)</a></p>
+<h3 id="ast"><a class="header" href="#ast">AST</a></h3>
+<h4 id="pandoc_ast"><a class="header" href="#pandoc_ast">pandoc_ast</a></h4>
+<p><img src="https://img.shields.io/github/stars/oli-obk/pandoc-ast?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/oli-obk/pandoc-ast" alt="GitHub" /></p>
+<blockquote>
+<p>反序列化和序列化 markdown ast 以编写 pandoc 过滤器</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/oli-obk/pandoc-ast">oli-obk/pandoc-ast (github.com)</a></p>
+<h3 id="自动化"><a class="header" href="#自动化">自动化</a></h3>
+<h4 id="headless_chrome"><a class="header" href="#headless_chrome">headless_chrome</a></h4>
+<p><img src="https://img.shields.io/github/stars/atroche/rust-headless-chrome?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/atroche/rust-headless-chrome" alt="GitHub" /></p>
+<blockquote>
+<p>一个无头浏览器。</p>
+<p>通过 DevTools 协议控制无头 Chrome 或 Chromium 的高级 API。它是 Puppeteer 的 Rust 等价物，一个由 Chrome DevTools 团队维护的 Node 库。
+它不是 100% 与 Puppeteer 兼容的功能，但这里足以满足大多数浏览器测试/网络爬虫用例，并且有几个“高级”功能，例如：</p>
+<ul>
+<li>网络请求拦截</li>
+<li>JavaScript 覆盖率监控</li>
+<li>打开隐身窗口</li>
+<li>截取元素或整个页面的屏幕截图</li>
+<li>将页面保存为 PDF</li>
+<li>'headful' 浏览</li>
+<li>自动下载适用于 Linux/Mac/Windows 的“已知良好”Chromium 二进制文件</li>
+<li>扩展预加载</li>
+</ul>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/atroche/rust-headless-chrome">atroche/rust-headless-chrome: A high-level API to control headless Chrome or Chromium over the DevTools Protocol. It is the Rust equivalent of Puppeteer, a Node library maintained by the Chrome DevTools team. (github.com)</a></p>
+<h3 id="系统相关"><a class="header" href="#系统相关">系统相关</a></h3>
+<h4 id="screenshots"><a class="header" href="#screenshots">screenshots</a></h4>
+<p><img src="https://img.shields.io/github/stars/nashaofu/screenshots-rs?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/nashaofu/screenshots-rs" alt="GitHub" /></p>
+<blockquote>
+<p>适用于 MacOS、Windows、Linux(X11、wayland) 的跨平台截图库。</p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/nashaofu/screenshots-rs">nashaofu/screenshots-rs: A cross-platform screenshots library for MacOS、Windows、Linux(X11、wayland). (github.com)</a></p>
+<h2 id="applications"><a class="header" href="#applications">Applications</a></h2>
+<blockquote>
+<p>用 Rust 编写的一些实用的应用软件。</p>
+</blockquote>
+<h3 id="gui-1"><a class="header" href="#gui-1">GUI</a></h3>
+<h4 id="appflowy"><a class="header" href="#appflowy">AppFlowy</a></h4>
+<p><img src="https://img.shields.io/github/stars/AppFlowy-IO/AppFlowy?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/AppFlowy-IO/AppFlowy" alt="GitHub" /></p>
+<blockquote>
+<p>⭐️ Notion 的开源替代品 ⭐️</p>
+<p><img src="https://user-images.githubusercontent.com/12026239/174754661-682980e4-e386-4685-bb6f-2da357390b61.png" alt="The Open Source Alternative To Notion." /></p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/AppFlowy-IO/AppFlowy">AppFlowy-IO/AppFlowy: AppFlowy is an open-source alternative to Notion. You are in charge of your data and customizations. Built with Flutter and Rust. (github.com)</a></p>
+<h4 id="lapce"><a class="header" href="#lapce">Lapce</a></h4>
+<p><img src="https://img.shields.io/github/stars/lapce/lapce?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/lapce/lapce" alt="GitHub" /></p>
+<blockquote>
+<p>Lapce 是用纯 Rust 编写的，用户界面是 Druid（也是用 Rust 编写）。它是用 Xi-Editor 的 Rope Science 设计的，使得计算速度快如闪电，并利用 OpenGL 进行渲染。关于 Lapce 功能的更多信息可以在主网站上找到，用户文档可以在 GitBook 上找到。</p>
+<p><img src="readme.assets/image-20220723211542645.png" alt="image-20220723211542645" /></p>
+</blockquote>
+<p>一个有点像是 VSCode 的编辑器。</p>
+<p>代码仓库：<a href="https://github.com/lapce/lapce">lapce/lapce: Lightning-fast and Powerful Code Editor written in Rust (github.com)</a></p>
+<h4 id="neovide"><a class="header" href="#neovide">Neovide</a></h4>
+<p><a href="https://discord.gg/SjFpZdQys6"><img src="https://camo.githubusercontent.com/8c289bc2e543bede952e249c23fb8e5a641878a4921bd5cf93a535ec78d4e4c6/68747470733a2f2f62616467656e2e6e65742f62616467652f69636f6e2f646973636f72643f69636f6e3d646973636f7264266c6162656c" alt="Discord" /></a> <a href="https://matrix.to/#/#neovide_community:gitter.im"><img src="https://camo.githubusercontent.com/49267a500b35c3df117c7227b1d812e62c1460715894622a385e2477b103d28f/68747470733a2f2f6d61747269782e746f2f696d672f6d61747269782d62616467652e737667" alt="Chat on Matrix" /></a> <a href="https://github.com/neovide/neovide/discussions"><img src="https://camo.githubusercontent.com/e406a82ccda7bcf2a0fcef447975af40b3eeaa28255fd2a5dac02c3f0def5e86/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d44697363757373696f6e732d677265656e3f6c6f676f3d676974687562" alt="Discussions" /></a></p>
+<blockquote>
+<p>这是 Neovim（一个经过积极重构和更新的 Vim 编辑器）的简单图形用户界面。在可能的情况下，有一些图形改进，但在功能上，它应该像终端用户界面一样。</p>
+<p><a href="https://github.com/neovide/neovide/blob/main/assets/BasicScreenCap.png"><img src="https://github.com/neovide/neovide/raw/main/assets/BasicScreenCap.png" alt="Basic Screen Cap" /></a></p>
+</blockquote>
+<p>仓库链接：<a href="https://github.com/neovide/neovide">neovide/neovide: No Nonsense Neovim Client in Rust (github.com)</a></p>
+<h4 id="rustdesk"><a class="header" href="#rustdesk">Rustdesk</a></h4>
+<p><img src="https://img.shields.io/github/stars/rustdesk/rustdesk?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/rustdesk/rustdesk" alt="GitHub" /></p>
+<blockquote>
+<p>面向所有人的开源虚拟/远程桌面基础架构！开源的 TeamViewer 替代方案。显示和控制您的 PC 和安卓设备。</p>
+<p><a href="https://user-images.githubusercontent.com/71636191/171661982-430285f0-2e12-4b1d-9957-4a58e375304d.png"><img src="https://user-images.githubusercontent.com/71636191/171661982-430285f0-2e12-4b1d-9957-4a58e375304d.png" alt="image" /></a></p>
+</blockquote>
+<p>仓库链接：<a href="https://github.com/rustdesk/rustdesk">rustdesk/rustdesk：为每个人提供开源虚拟/远程桌面基础架构！开源的 TeamViewer 替代方案。显示和控制您的 PC 和安卓设备。 (github.com)</a></p>
+<h3 id="tui-1"><a class="header" href="#tui-1">TUI</a></h3>
+<h4 id="gitui"><a class="header" href="#gitui">GitUI</a></h4>
+<p><img src="https://img.shields.io/github/stars/extrawurst/gitui?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/extrawurst/gitui" alt="GitHub" /></p>
+<blockquote>
+<p>GitUI 为您提供了 git GUI 的舒适性，但就在您的终端上.</p>
+<p><a href="https://github.com/extrawurst/gitui/blob/master/demo.gif"><img src="https://github.com/extrawurst/gitui/raw/master/demo.gif" alt="img" /></a></p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/extrawurst/gitui">extrawurst/gitui: Blazing 💥 fast terminal-ui for git written in rust 🦀 (github.com)</a></p>
+<h3 id="cli"><a class="header" href="#cli">CLI</a></h3>
+<h4 id="bore"><a class="header" href="#bore">bore</a></h4>
+<p><img src="https://img.shields.io/github/stars/ekzhang/bore?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/ekzhang/bore" alt="GitHub" /></p>
+<blockquote>
+<p>Rust 中的一个现代、简单的 TCP 隧道，它将本地端口暴露给远程服务器，绕过标准 NAT 连接防火墙。这就是它所做的一切：不多也不少。</p>
+<p><a href="https://camo.githubusercontent.com/895c0a44b8f14a929f4efbeda90eeb4149610a901f85ef03f50a3cbfacabbb76/68747470733a2f2f692e696d6775722e636f6d2f76446547736d782e676966"><img src="https://camo.githubusercontent.com/895c0a44b8f14a929f4efbeda90eeb4149610a901f85ef03f50a3cbfacabbb76/68747470733a2f2f692e696d6775722e636f6d2f76446547736d782e676966" alt="Video demo" /></a></p>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/ekzhang/bore">ekzhang/bore: 🕳 bore is a simple CLI tool for making tunnels to localhost (github.com)</a></p>
+<h4 id="cloc-rs"><a class="header" href="#cloc-rs">cloc-rs</a></h4>
+<p><img src="https://img.shields.io/github/stars/ltoddy/cloc-rs?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/ltoddy/cloc-rs" alt="GitHub" /></p>
+<blockquote>
+<p>快速计算或计算源代码行和注释的差异。</p>
+<pre><code>macbox :: github/kubernetes » time cloc .
+     72.5313 secs
+┌───────────────────────────────────────────────────────────────────────────────────────┐
+│ Language                        files        size       blank     comment        code │
+├───────────────────────────────────────────────────────────────────────────────────────┤
+│ Autoconf                          533   515.91 KB         100         992       21399 │
+│ Bash                              148   420.09 KB        1183         592       10153 │
+│ C                                 149   149.31 KB         970        1671        3065 │
+│ C Header                           25     6.94 MB        9975      109175       20975 │
+│ GNU Style Assembly               2946     8.96 MB       48895       43894      285473 │
+│ Go                             463514     4.44 GB    13873486    22200757   106047029 │
+│ Html                               50    950.00 B           0           0          50 │
+│ Ini                                24     5.70 KB          48           0         240 │
+│ JSON                            21759  1011.18 MB         100           0    23771190 │
+│ Lua                                25   419.92 KB         750         100       11875 │
+│ Markdown                        18270   162.09 MB      530001           0     1794019 │
+│ Plain Text                       1161     5.50 MB        7186           0      176276 │
+│ PowerShell                        174     2.92 MB        8947       74817        1149 │
+│ Protocol Buffer                  4489    51.42 MB      220374      684092      425720 │
+│ Python                            175   581.23 KB        2975        5500        8750 │
+│ SVG                               101     1.22 MB         101         101        9532 │
+│ Shell                            9470    56.70 MB      189547      361195      998808 │
+│ Toml                              299   342.58 KB        3667        4325        7223 │
+│ Yaml                            38405   140.98 MB       31308       31043     5317632 │
+├───────────────────────────────────────────────────────────────────────────────────────┤
+│ Sum                            561717     5.86 GB    14929613    23518254   138910558 │
+└───────────────────────────────────────────────────────────────────────────────────────┘
+cloc .  23.21s user 153.47s system 239% cpu 1:13.72 total
+</code></pre>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/ltoddy/cloc-rs">ltoddy/cloc-rs: Count, or compute differences of, lines of source code and comments fastly. (github.com)</a></p>
+<h4 id="cargo-edit"><a class="header" href="#cargo-edit">cargo-edit</a></h4>
+<p><img src="https://img.shields.io/github/stars/killercup/cargo-edit?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/killercup/cargo-edit" alt="GitHub" /></p>
+<blockquote>
+<p>该工具扩展了 Cargo，允许您通过从命令行修改 Cargo.toml 文件来添加、删除和升级依赖项。
+当前可用的子命令：</p>
+<ul>
+<li><a href="https://github.com/killercup/cargo-edit#cargo-rm"><code>cargo rm</code></a></li>
+<li><a href="https://github.com/killercup/cargo-edit#cargo-upgrade"><code>cargo upgrade</code></a></li>
+<li><a href="https://github.com/killercup/cargo-edit#cargo-set-version"><code>cargo set-version</code></a></li>
+</ul>
+</blockquote>
+<p>代码仓库：<a href="https://github.com/killercup/cargo-edit">killercup/cargo-edit: A utility for managing cargo dependencies from the command line. (github.com)</a></p>
+<h3 id="database"><a class="header" href="#database">Database</a></h3>
+<h4 id="cnosdb"><a class="header" href="#cnosdb">cnosdb</a></h4>
+<p><img src="https://img.shields.io/github/stars/cnosdb/cnosdb?style=flat" alt="stars" /> <img src="https://img.shields.io/github/license/cnosdb/cnosdb" alt="GitHub" /></p>
+<blockquote>
+<p>一个具有高性能、高压缩率和高实用性的开源分布式时间序列数据库。</p>
+</blockquote>
+<p>仓库地址：<a href="https://github.com/cnosdb/cnosdb/blob/main/README_CN.md">cnosdb/README_CN.md at main · cnosdb/cnosdb (github.com)</a></p>
+<h2 id="community"><a class="header" href="#community">Community</a></h2>
+<blockquote>
+<p>Rust 相关的社区。</p>
+</blockquote>
+<ul>
+<li><a href="https://rustcc.cn/">Rust 语言中文社区-首页 (rustcc.cn)</a></li>
+<li><a href="https://learnku.com/rust">Rust 技术论坛 | Rust 语言技术论坛 - 优质的 Rust 开发者学习社区 (learnku.com)</a></li>
+<li><a href="https://users.rust-lang.org/">The Rust Programming Language Forum (rust-lang.org)</a></li>
+</ul>
+<h2 id="incident"><a class="header" href="#incident">Incident</a></h2>
+<blockquote>
+<p>Rust 相关的热点新闻或事件。</p>
+</blockquote>
+<ul>
+<li>2022-07-03 <a href="https://os.51cto.com/article/713004.html">Linux 内核将引入 Rust，Linus：以防此事搞砸了我又发脾气，先给大家道个歉-51CTO.COM</a></li>
+</ul>
+<h2 id="note"><a class="header" href="#note">Note</a></h2>
+<p>封面图来自：<a href="https://rustacean.net/">Rustacean.net: Home of Ferris the Crab</a></p>
+<p>徽章来自：<a href="https://shields.io/category/license">Shields.io: Quality metadata badges for open source projects</a></p>
+<p>如果你有自己用 Rust 开发的软件或者推荐的资源都可以提交 PR，在这里感谢所有为 Rust 生态贡献的开发者，因为只有越来越丰富的生态才能吸引更多的人来学习使用 Rust。</p>
+<p>最后希望 Rust 越来越牛 X。</p>
+<p>如果文档有用请帮帮忙点一下 star，收集整理不易，也可以关注我们公众号【Rust 编程指南】获取实时推送的文章。</p>
+<img src="readme.assets/rust%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97.jpeg" alt="rust编程指南" style="zoom:50%;" />
+<h2 id="license"><a class="header" href="#license">License</a></h2>
+<p>MIT</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../rust/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../rust/mut.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../rust/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../rust/mut.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -12,12 +12,9 @@
 
 ---
 
-# rCore 学习笔记
+# 数据结构与算法
 
-- [LibOS](./rcore/22-11-09-LibOS.md)
-- [BatchSystem](./rcore/22-11-10-BatchSystem.md)
-- [MultitaskingOS](./rcore/22-11-11-MultitaskingOS.md)
-- [Address](./rcore/22-11-14-Address.md)
+- [排序](./algorithm/sort.md)
 
 ---
 
@@ -77,3 +74,12 @@
 - [Diffing算法与key](./react/react_13.md)
 - [Diffing算法与key](./react/react_14.md)
 - [Diffing算法与key](./react/react_15.md)
+
+---
+
+# rCore 学习笔记
+
+- [LibOS](./rcore/22-11-09-LibOS.md)
+- [BatchSystem](./rcore/22-11-10-BatchSystem.md)
+- [MultitaskingOS](./rcore/22-11-11-MultitaskingOS.md)
+- [Address](./rcore/22-11-14-Address.md)
