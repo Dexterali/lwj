@@ -15,6 +15,9 @@
 # 数据结构与算法
 
 - [排序](./algorithm/sort.md)
+- [lowbit](./algorithm/lowbit.md)
+- [二分](./algorithm/二分.md)
+- [离散化](./algorithm/离散化.md)
 
 ---
 
